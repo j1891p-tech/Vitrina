@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!-- Vitrina · Marca de ropa · tiraje corto, sin local · actualizada 27/08/2026 · compatible con convertidor v2 -->
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CRUDO — Camisetas estampadas</title>
+<meta name="description" content="Camisetas estampadas en tiraje corto. Envíos a todo el país, pago contra entrega.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#EDE6D9;
+  --tinta:#2E2A24;
+  --rojo:#B0533C;
+  --azul:#4A628F;
+  --humo:#6B6455;
+  --borde:#C6BCA7;
+  --max:820px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--papel);color:var(--tinta);font-family:'Space Grotesk',system-ui,sans-serif;font-size:16.5px;line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:76px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:'Syne',sans-serif;font-weight:800;line-height:1.02;text-transform:uppercase;letter-spacing:-.01em}
+a{color:inherit}
+.mono{font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--humo)}
+.seccion{padding:32px 0}
+.seccion h2{font-size:25px;margin:6px 0 16px}
+
+/* cabezote */
+.top{padding:26px 0 24px}
+.marca{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.top h1{font-size:clamp(40px,13vw,74px);line-height:.88}
+.top h1 span{color:var(--rojo)}
+.reg{width:34px;height:34px;flex:none;position:relative}
+.reg::before,.reg::after{content:"";position:absolute;background:var(--borde)}
+.reg::before{left:16px;top:0;width:1.5px;height:34px}
+.reg::after{top:16px;left:0;height:1.5px;width:34px}
+.lema{margin-top:12px;max-width:34ch;font-size:16px}
+.datos{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.chip{background:#E3D9C6;border-radius:999px;padding:6px 13px;font-size:12.5px;font-weight:500}
+.chip.lleno{background:#D3C6AC;color:#4A4335}
+.chip.rojo{background:#E2C6BB;color:#7A3B29}
+
+/* redes */
+.redes{display:grid;gap:8px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:560px){.redes{grid-template-columns:repeat(5,1fr)}}
+.red{display:block;text-decoration:none;background:#E3D9C6;border-radius:14px;padding:13px 15px;transition:background .15s ease}
+.red:hover{background:#D8CBB2}
+.red b{display:block;font-family:'Syne',sans-serif;font-size:15px;text-transform:uppercase}
+.red small{font-family:'Space Mono',monospace;font-size:11px;opacity:.7}
+
+/* videos */
+.feed{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:620px){.feed{grid-template-columns:repeat(4,1fr)}}
+.clip{aspect-ratio:9/16;background:#D6C9B0;border-radius:13px;display:grid;place-items:center;text-align:center;font-family:'Space Mono',monospace;font-size:10.5px;color:#5B5342;padding:8px;letter-spacing:.06em}
+
+/* catálogo */
+.grid{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(min-width:640px){.grid{grid-template-columns:repeat(3,1fr)}}
+.item{background:#F6F0E4;border-radius:16px;overflow:hidden}
+.item .img{aspect-ratio:1/1;background:#D6C9B0;display:grid;place-items:center;font-family:'Space Mono',monospace;font-size:10px;color:#5B5342;text-align:center;padding:8px}
+.item .cuerpo{padding:12px}
+.item h3{font-size:15px;margin-bottom:3px}
+.item .val{font-family:'Space Mono',monospace;font-size:14px;margin-bottom:4px}
+.tallas{font-family:'Space Mono',monospace;font-size:10.5px;color:var(--humo);margin-bottom:10px}
+.pedir{display:block;text-align:center;text-decoration:none;background:var(--rojo);color:#FBF6EC;border-radius:11px;padding:11px;font-weight:700;font-size:13.5px;font-family:'Syne',sans-serif;text-transform:uppercase}
+.agotado{background:#D8CDB8;color:#6B6455;cursor:default}
+
+/* confianza */
+.confia{display:grid;gap:10px;grid-template-columns:1fr}
+@media(min-width:600px){.confia{grid-template-columns:1fr 1fr}}
+.caja{background:#F6F0E4;border-radius:16px;padding:18px}
+.tiendas{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+@media(min-width:600px){.tiendas{grid-template-columns:repeat(4,1fr)}}
+.tienda{display:block;text-decoration:none;background:#E3D9C6;border-radius:14px;padding:14px 15px}
+.tienda:hover{background:#D8CBB2}
+.tienda b{display:block;font-family:'Syne',sans-serif;font-size:14.5px;text-transform:uppercase}
+.tienda small{font-family:'Space Mono',monospace;font-size:10.5px;color:#6B6455}
+.faq{background:#F6F0E4;border-radius:16px;padding:6px 18px}
+.faq details{border-top:1px solid var(--borde);padding:12px 0}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;font-weight:700;font-size:15.5px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--rojo);font-weight:700}
+.faq details[open] summary::after{content:"–"}
+.faq p{font-size:14.5px;color:#5B5342;margin-top:8px}
+.caja h3{font-size:14px;margin-bottom:8px}
+.caja p,.caja li{font-size:14.5px}
+.caja ul{list-style:none}
+.caja li{padding:6px 0 6px 18px;position:relative}
+.caja li::before{content:"→";position:absolute;left:0;color:var(--rojo)}
+.cifra{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;line-height:1;display:block;margin-bottom:2px}
+
+/* estrellas */
+.primera{background:#CBD5E4;color:#2F3E58;border-radius:18px;padding:26px 20px;text-align:center;margin-top:16px}
+.primera h3{font-size:21px;margin-bottom:8px}
+.primera p{font-size:14.5px;color:#4E5E78;margin-bottom:16px;max-width:38ch;margin-left:auto;margin-right:auto}
+.primera a{display:inline-block;background:var(--azul);color:#F6F2E8;text-decoration:none;border-radius:11px;padding:12px 20px;font-weight:700;font-family:'Syne',sans-serif;text-transform:uppercase;font-size:14px}
+.muro{display:grid;gap:8px;grid-template-columns:repeat(3,1fr);margin-top:12px}
+.captura{aspect-ratio:3/4;background:#D6C9B0;border-radius:12px;display:grid;place-items:center;font-family:'Space Mono',monospace;font-size:9.5px;color:#5B5342;text-align:center;padding:6px}
+
+/* pie */
+.pie{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding:24px 0 34px;font-size:13px;color:var(--humo)}
+.qr{width:96px;height:96px;border-radius:14px;display:grid;place-items:center;font-family:'Space Mono',monospace;font-size:9.5px;color:#5B5342;text-align:center;padding:8px;background:#E3D9C6}
+
+/* barra fija */
+.fija{position:fixed;left:0;right:0;bottom:0;background:#F6F0E4;border-top:1px solid var(--borde);padding:10px 18px;z-index:30}
+.fija a{display:block;max-width:var(--max);margin:0 auto;text-align:center;text-decoration:none;background:var(--rojo);color:#FBF6EC;border-radius:12px;padding:13px;font-family:'Syne',sans-serif;font-weight:800;text-transform:uppercase;font-size:15px}
+:focus-visible{outline:3px solid var(--azul);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="marca">
+    <div>
+      <div class="mono">Tiraje corto · Hecho en Colombia</div>
+      <h1>Cru<span>do</span></h1>
+    </div>
+    <div class="reg" aria-hidden="true"></div>
+  </div>
+  <p class="lema">Camisetas estampadas en tiraje corto. Vendemos por redes y enviamos a todo el país.</p>
+  <div class="datos">
+    <span class="chip lleno">Estampando desde 2021</span>
+    <span class="chip rojo">1.240 pedidos enviados</span>
+    <span class="chip">Pago contra entrega</span>
+  </div>
+</div></header>
+
+<section class="seccion"><div class="wrap">
+  <div class="mono">Aquí publicamos todo</div>
+  <h2>Nuestras redes</h2>
+  <p style="max-width:44ch;margin-bottom:16px">Novedades, tirajes nuevos y cómo lo hacemos. Lo que ve aquí se actualiza cuando publicamos.</p>
+  <div class="redes">
+    <a class="red" href="#" target="_blank" rel="noopener"><b>TikTok</b><small>@crudo · 48K</small></a>
+    <a class="red" href="#" target="_blank" rel="noopener"><b>Instagram</b><small>@crudo · 12K</small></a>
+    <a class="red" href="#" target="_blank" rel="noopener"><b>Facebook</b><small>Crudo</small></a>
+    <a class="red" href="#" target="_blank" rel="noopener"><b>YouTube</b><small>Cómo se estampa</small></a>
+    <a class="red" href="#" target="_blank" rel="noopener"><b>Google</b><small>Ficha y reseñas</small></a>
+  </div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="mono">También nos encuentra en</div>
+  <h2>Nuestras tiendas</h2>
+  <div class="tiendas">
+    <a class="tienda" href="#" target="_blank" rel="noopener"><b>Mercado Libre</b><small>★ Verde · 940 ventas</small></a>
+    <a class="tienda" href="#" target="_blank" rel="noopener"><b>TikTok Shop</b><small>Tienda verificada</small></a>
+    <a class="tienda" href="#" target="_blank" rel="noopener"><b>Google</b><small>Ficha y reseñas</small></a>
+    <a class="tienda" href="#" target="_blank" rel="noopener"><b>Rastrear pedido</b><small>Con su número de guía</small></a>
+  </div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="mono">Se actualiza solo cuando publican</div>
+  <h2>Lo último</h2>
+  <div class="feed">
+    <div class="clip">TIKTOK<br>último video</div>
+    <div class="clip">INSTAGRAM<br>último reel</div>
+    <div class="clip">FACEBOOK<br>última publicación</div>
+    <div class="clip">YOUTUBE<br>último video</div>
+  </div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="mono">Disponible ahora</div>
+  <h2>Tiraje actual</h2>
+  <div class="grid">
+    <div class="item">
+      <div class="img">FOTO 1:1<br>camiseta</div>
+      <div class="cuerpo">
+        <h3>Serie Montaña</h3>
+        <div class="val">$79.000</div>
+        <div class="tallas">S · M · L · XL</div>
+        <a class="pedir" href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20quiero%20la%20camiseta%20Serie%20Monta%C3%B1a.%20Talla%3A%20" target="_blank" rel="noopener">Pedir</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="img">FOTO 1:1<br>camiseta</div>
+      <div class="cuerpo">
+        <h3>Ruido Blanco</h3>
+        <div class="val">$79.000</div>
+        <div class="tallas">M · L · XL</div>
+        <a class="pedir" href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20quiero%20la%20camiseta%20Ruido%20Blanco.%20Talla%3A%20" target="_blank" rel="noopener">Pedir</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="img">FOTO 1:1<br>camiseta</div>
+      <div class="cuerpo">
+        <h3>Cuadro Rojo</h3>
+        <div class="val">$85.000</div>
+        <div class="tallas">Agotada · vuelve en marzo</div>
+        <span class="pedir agotado">Agotada</span>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="mono">Antes de que pregunte</div>
+  <h2>Cómo compra</h2>
+  <div class="confia">
+    <div class="caja">
+      <h3>Envíos</h3>
+      <ul>
+        <li>Ciudades principales: 2 a 3 días</li>
+        <li>Resto del país: 3 a 5 días</li>
+        <li>Envío gratis desde $150.000</li>
+        <li>Se envía guía de rastreo por WhatsApp</li>
+      </ul>
+    </div>
+    <div class="caja">
+      <h3>Pagos</h3>
+      <ul>
+        <li>Contra entrega en todo el país</li>
+        <li>Nequi, Daviplata, transferencia</li>
+        <li>Nunca pedimos datos de la tarjeta por chat</li>
+      </ul>
+    </div>
+    <div class="caja">
+      <h3>Cambios</h3>
+      <p>Cambio de talla gratis dentro de los primeros 8 días, siempre que la camiseta no se haya usado ni lavado.</p>
+    </div>
+    <div class="caja">
+      <h3>Quién responde</h3>
+      <p><strong>Laura Beltrán</strong> — dueña del taller. Contesta el WhatsApp de lunes a sábado, de 9:00 a.m. a 6:00 p.m.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="mono">Preguntas frecuentes</div>
+  <h2>Lo que más nos preguntan</h2>
+  <div class="faq">
+    <details open><summary>¿Cómo sé qué talla pedir?</summary><p>Cada camiseta tiene su tabla de medidas en centímetros. Si tiene dudas, escríbanos su estatura y contextura y le decimos cuál le queda mejor.</p></details>
+    <details><summary>¿Puedo pagar cuando reciba?</summary><p>Sí. El pago contra entrega está disponible en todo el país, sin costo adicional.</p></details>
+    <details><summary>¿Cuánto tarda en llegar?</summary><p>Entre 2 y 3 días hábiles en ciudades principales, y de 3 a 5 en el resto del país. Le enviamos el número de guía apenas sale.</p></details>
+    <details><summary>¿Y si no me queda?</summary><p>Cambio de talla gratis dentro de los primeros 8 días, siempre que no se haya usado ni lavado.</p></details>
+    <details><summary>¿Hacen diseños por encargo?</summary><p>Sí, desde 10 unidades. Escríbanos con la idea y le cotizamos el tiraje.</p></details>
+  </div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="mono">Prueba</div>
+  <h2>Entregas reales</h2>
+  <div class="muro">
+    <div class="captura">CAPTURA<br>cliente</div>
+    <div class="captura">CAPTURA<br>cliente</div>
+    <div class="captura">CAPTURA<br>cliente</div>
+  </div>
+  <div class="primera">
+    <h3>Somos nuevos en Google</h3>
+    <p>Si le gustó su camiseta, una reseña nos ayuda a que más gente confíe en pedirnos.</p>
+    <a href="#" target="_blank" rel="noopener">Dejar mi primera estrella</a>
+  </div>
+</div></section>
+
+<div class="wrap pie">
+  <div class="qr">CÓDIGO QR</div>
+  <div>Este código va impreso en la etiqueta y en el empaque. Quien lo escanee llega al catálogo actualizado, a las redes y al WhatsApp.</div>
+</div>
+
+<div class="fija"><a href="https://wa.me/57XXXXXXXXXX" target="_blank" rel="noopener">Escribir por WhatsApp</a></div>
+
+</body>
+</html>

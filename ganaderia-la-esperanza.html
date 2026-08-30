@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<!-- Vitrina · Ganadería de registro · brahman y gyr · actualizada 27/08/2026 · compatible con convertidor v2 -->
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ganadería La Esperanza — Brahman y Gyr de registro · Reproductores, hembras y genética</title>
+<meta name="description" content="Reproductores y hembras con registro Asocebú, evaluación genética y sanidad al día. Pajillas y embriones con despacho nacional.">
+<meta name="theme-color" content="#4E6B3C">
+<link rel="canonical" href="https://vitrina.com.co/ganaderia-modelo">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234E6B3C'/%3E%3Ctext x='16' y='23' font-size='17' text-anchor='middle' fill='%23FBFCF8' font-family='Georgia,serif'%3EE%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ganadería La Esperanza — Brahman y Gyr de registro">
+<meta property="og:description" content="Reproductores, hembras y genética con registro, evaluación y sanidad al día.">
+<meta property="og:image" content="https://EJEMPLO.com/ganaderia-og.jpg">
+<meta property="og:url" content="https://vitrina.com.co/ganaderia-modelo">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--papel:#F1F2EC;--tinta:#252E22;--suave:#5D6857;--acento:#4E6B3C;
+--pastel:#DDE4D3;--marco:#C4CFB8;--marcotxt:#41533A;--carta:#FBFCF8;--max:860px;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--papel);color:var(--tinta);font-family:'Barlow',system-ui,sans-serif;font-size:16.5px;
+line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:80px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:'Bitter',Georgia,serif;font-weight:600;line-height:1.18}
+a{color:inherit} img{max-width:100%;display:block}
+.seccion{padding:32px 0}
+.rotulo{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--acento);margin-bottom:7px}
+h2{font-size:28px;margin-bottom:14px}
+.apoyo{max-width:48ch;margin-bottom:18px;color:var(--suave)}
+.marco{background:var(--marco);display:grid;place-items:center;color:var(--marcotxt);
+font-size:10.5px;text-align:center;padding:8px;overflow:hidden;line-height:1.35}
+.marco img{width:100%;height:100%;object-fit:cover}
+.marco:has(img){padding:0}
+:focus-visible{outline:2px solid var(--acento);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.cinta{background:var(--tinta);color:var(--carta);font-size:12.5px}
+.cinta .wrap{display:flex;gap:10px;align-items:center;justify-content:center;padding:8px 20px;flex-wrap:wrap;text-align:center}
+.cinta a{color:var(--carta);text-decoration:underline;text-underline-offset:3px}
+
+.top{background:var(--pastel);padding:26px 0 24px;border-radius:0 0 22px 22px}
+.ident{display:flex;gap:15px;align-items:center;flex-wrap:wrap}
+.logo{width:62px;height:62px;border-radius:12px;flex:none}
+.top h1{font-size:clamp(27px,6.4vw,38px)}
+.top .sub{font-size:13.5px;color:var(--suave);margin-top:3px}
+.sellos{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.sello{background:var(--carta);border-radius:999px;padding:5px 13px;font-size:12.5px;color:var(--marcotxt)}
+.sello.oro{background:var(--acento);color:var(--carta)}
+
+.motor{background:var(--pastel);border-radius:18px;padding:22px 20px}
+.redes{display:grid;gap:9px;grid-template-columns:1fr 1fr}
+@media(min-width:560px){.redes{grid-template-columns:repeat(5,1fr)}}
+.redes a{text-decoration:none;background:var(--carta);border-radius:12px;padding:12px;
+font-size:14.5px;display:flex;flex-wrap:wrap;align-items:center;gap:7px;transition:transform .15s ease}
+.redes a:hover{transform:translateY(-2px)}
+.redes a small{flex-basis:100%;font-size:12px;color:var(--suave)}
+.clips{display:grid;gap:11px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:560px){.clips{grid-template-columns:repeat(4,1fr)}}
+.clip{aspect-ratio:9/16;border-radius:12px}
+
+/* filtro del catálogo */
+.filtros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.filtros button{background:var(--carta);border:1px solid var(--marco);border-radius:999px;
+padding:8px 16px;font:inherit;font-size:14px;cursor:pointer;color:var(--marcotxt)}
+.filtros button[aria-pressed="true"]{background:var(--acento);color:var(--carta);border-color:var(--acento)}
+
+/* ficha de ejemplar: el dato es el producto */
+.ejemplar{background:var(--carta);border:1px solid var(--marco);border-radius:var(--r);
+overflow:hidden;margin-bottom:14px}
+.ejemplar[hidden]{display:none}
+.ejemplar .foto{aspect-ratio:16/10}
+.ejemplar .cuerpo{padding:16px 18px}
+.ejemplar .encab{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;flex-wrap:wrap}
+.ejemplar h3{font-size:23px}
+.ejemplar .raza{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--acento);margin-top:2px}
+.ejemplar .val{font-size:17px;color:var(--acento);white-space:nowrap;font-weight:600}
+.ejemplar .nota{font-size:14.5px;color:var(--suave);margin:10px 0 0}
+.tabla-datos{width:100%;border-collapse:collapse;margin-top:13px;font-size:14.5px}
+.tabla-datos th{text-align:left;font-weight:400;color:var(--marcotxt);padding:7px 0;
+border-bottom:1px solid var(--pastel);width:46%}
+.tabla-datos td{text-align:right;padding:7px 0;border-bottom:1px solid var(--pastel);font-variant-numeric:tabular-nums}
+.tabla-datos tr:last-child th,.tabla-datos tr:last-child td{border-bottom:0}
+.respaldo{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}
+.respaldo span{background:var(--pastel);border-radius:7px;padding:4px 10px;font-size:12px;color:var(--marcotxt)}
+.acciones{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+.mini{background:var(--acento);color:var(--carta);text-decoration:none;border-radius:10px;
+padding:10px 17px;font-size:14.5px;font-weight:500}
+.mini.claro{background:var(--pastel);color:var(--marcotxt)}
+
+.cajas{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:620px){.cajas{grid-template-columns:1fr 1fr}}
+.caja{background:var(--carta);border:1px solid var(--marco);border-radius:var(--r);padding:17px 19px}
+.caja h3{font-size:19px;margin-bottom:7px}
+.caja p{font-size:14.5px;color:var(--suave)}
+.caja .precio{color:var(--acento);font-weight:600;margin-top:9px;font-size:15.5px}
+
+.datos{background:var(--carta);border:1px solid var(--marco);border-radius:var(--r);padding:5px 19px}
+.dato{display:flex;justify-content:space-between;gap:16px;padding:12px 0;
+border-bottom:1px solid var(--pastel);font-size:15.5px}
+.dato:last-child{border-bottom:0}
+.dato span:first-child{color:var(--marcotxt)}
+.mapas{display:flex;gap:20px;margin-top:15px;flex-wrap:wrap}
+.vinculo{text-decoration:none;border-bottom:1px solid var(--acento);color:var(--acento);
+font-size:14.5px;padding-bottom:2px;display:inline-flex;align-items:center;gap:7px}
+
+.agenda{background:var(--pastel);border-radius:18px;padding:5px 19px}
+.linea-ag{display:flex;justify-content:space-between;gap:14px;padding:13px 0;
+border-bottom:1px solid var(--marco);font-size:15.5px;flex-wrap:wrap}
+.linea-ag:last-child{border-bottom:0}
+.linea-ag b{font-weight:600}
+.linea-ag span{color:var(--marcotxt);font-size:14px}
+
+.faq details{background:var(--carta);border:1px solid var(--marco);border-radius:var(--r);
+padding:13px 17px;margin-bottom:9px}
+.faq summary{cursor:pointer;font-weight:600;font-size:16px;list-style:none;
+display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--acento);font-size:22px;font-weight:400;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{font-size:15px;color:var(--suave);margin-top:9px}
+
+.resena{background:var(--carta);border:1px solid var(--marco);border-radius:var(--r);padding:16px 18px;margin-bottom:10px}
+.est{color:var(--acento);letter-spacing:2px;font-size:16px}
+.resena p{font-size:15.5px;margin:6px 0}
+.resena b{font-size:13.5px;color:var(--suave);font-weight:400}
+
+.legal{background:var(--pastel);border-radius:14px;padding:16px 18px;font-size:13.5px;color:var(--marcotxt);margin-top:18px}
+
+.pie{padding:28px 0 32px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.qr{width:106px;height:106px;background:#fff;border-radius:13px;padding:8px;flex:none}
+.qr svg{width:100%;height:100%;display:block;shape-rendering:crispEdges}
+.pie p{font-size:13.5px;color:var(--suave);max-width:42ch}
+
+.vitrina{background:var(--tinta);color:var(--carta);padding:36px 0 40px}
+.vitrina .rotulo{color:#A8C193}
+.vitrina h2{color:var(--carta);font-size:28px;max-width:21ch}
+.vitrina p{color:#CBD4C3;font-size:15.5px;max-width:48ch;margin-bottom:8px}
+.vitrina .lista{margin:16px 0 22px;padding:0;list-style:none;display:grid;gap:7px}
+.vitrina .lista li{font-size:15px;color:#CBD4C3;padding-left:24px;position:relative}
+.vitrina .lista li::before{content:"";position:absolute;left:0;top:.55em;width:9px;height:9px;
+border-radius:50%;background:#7E9968}
+.vitrina .cta{display:inline-block;background:var(--carta);color:var(--tinta);text-decoration:none;
+border-radius:11px;padding:14px 22px;font-weight:600;font-size:15.5px}
+.vitrina .fino{font-size:13px;color:#8E9A87;margin-top:14px}
+
+.fija{position:fixed;left:0;right:0;bottom:0;background:var(--carta);
+border-top:1px solid var(--marco);padding:11px 20px;z-index:20}
+.fija .wrap{display:flex;gap:9px;padding:0}
+.fija a{flex:1;text-align:center;text-decoration:none;background:var(--acento);color:var(--carta);
+border-radius:11px;padding:13px;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px}
+.fija a.segundo{background:var(--pastel);color:var(--marcotxt);flex:0 0 auto;padding:13px 19px}
+.ico{width:1.15em;height:1.15em;fill:currentColor;flex:none}
+.aviso{position:fixed;left:50%;bottom:88px;transform:translateX(-50%) translateY(8px);
+background:var(--tinta);color:var(--carta);font-size:13.5px;padding:11px 18px;border-radius:12px;
+max-width:min(92vw,420px);text-align:center;opacity:0;pointer-events:none;
+transition:opacity .2s ease,transform .2s ease;z-index:30}
+.aviso.ver{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="cinta"><div class="wrap">
+  <span><b>Página modelo para ganaderías de registro.</b> Se personaliza según su hato.</span>
+  <a href="#suya">Vea cómo quedaría la suya →</a>
+</div></div>
+
+<header class="top"><div class="wrap">
+  <div class="ident">
+    <div class="logo marco">HIERRO</div>
+    <div><h1>Ganadería La Esperanza</h1>
+      <div class="sub">Brahman y Gyr de registro · Reproductores, hembras y genética</div></div>
+  </div>
+  <div class="sellos">
+    <span class="sello oro">Afiliada a Asocebú</span>
+    <span class="sello">Hato en registro desde 2004</span>
+    <span class="sello">Hato libre de brucelosis y tuberculosis</span>
+    <span class="sello">Despacho de genética a todo el país</span>
+  </div>
+</div></header>
+
+<section class="seccion"><div class="wrap">
+<div class="motor">
+  <div class="rotulo">Síganos</div>
+  <h2>Nuestras redes</h2>
+  <p class="apoyo">Nacimientos, pesajes, ferias y cómo va la progenie.</p>
+  <div class="redes">
+    <a class="demo" href="#" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>TikTok<small>@ganaderialaesperanza</small></a>
+    <a class="demo" href="#" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>Instagram<small>@ganaderialaesperanza</small></a>
+    <a class="demo" href="#" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>Facebook<small>La Esperanza</small></a>
+    <a class="demo" href="#" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube<small>Recorridos del hato</small></a>
+    <a class="demo" href="#" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>Google<small>Ficha y reseñas</small></a>
+  </div>
+</div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="rotulo">Lo último que publicamos</div>
+  <h2>Del hato esta semana</h2>
+  <div class="clips">
+    <div class="clip marco">TikTok<br>última publicación</div>
+    <div class="clip marco">Instagram<br>última publicación</div>
+    <div class="clip marco">Facebook<br>última publicación</div>
+    <div class="clip marco">YouTube<br>última publicación</div>
+  </div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="rotulo">Catálogo</div>
+  <h2>Lo que hay disponible</h2>
+  <p class="apoyo">Cada ficha lleva registro, DEP y estado sanitario. Los soportes se envían por WhatsApp antes de cualquier negociación.</p>
+  <div class="filtros">
+    <button type="button" data-filtro="todos" aria-pressed="true">Todo</button>
+    <button type="button" data-filtro="reproductores" aria-pressed="false">Reproductores</button>
+    <button type="button" data-filtro="hembras" aria-pressed="false">Hembras</button>
+    <button type="button" data-filtro="genetica" aria-pressed="false">Pajillas y embriones</button>
+  </div>
+  <article class="ejemplar" data-grupo="reproductores">
+  <div class="foto marco">FOTO · Toro brahman de perfil en potrero, luz de mañana</div>
+  <div class="cuerpo">
+    <div class="encab">
+      <div><h3>Vencedor FIV</h3><div class="raza">Brahman gris · Toro · 42 meses</div></div>
+      <div class="val">$85.000.000</div>
+    </div>
+    <p class="nota">Reproductor probado. Progenie evaluada en dos hatos. Se vende con derechos de recolección compartidos.</p>
+    <table class="tabla-datos"><tbody><tr><th>Registro Asocebú</th><td>AC-00000</td></tr><tr><th>DEP peso al destete</th><td>+8,4 kg</td></tr><tr><th>DEP habilidad materna</th><td>+6,1 kg</td></tr><tr><th>Circunferencia escrotal</th><td>38 cm</td></tr><tr><th>Hijos registrados</th><td>61</td></tr><tr><th>Última evaluación genética</th><td>Abril 2026</td></tr></tbody></table>
+    <div class="respaldo"><span>Registro Asocebú</span><span>Evaluación genética</span><span>Andrológico vigente</span><span>Libre de brucelosis y tuberculosis</span></div>
+    <div class="acciones">
+      <a class="mini wa-ev" data-ev="lote_1" href="https://wa.me/573001234567?text=Buenas%2C%20me%20interesa%20Vencedor%20FIV.%20%C2%BFMe%20pasa%20la%20ficha%20completa%3F" target="_blank" rel="noopener">Pedir ficha completa</a>
+      <a class="mini claro wa-ev" data-ev="visita_1" href="https://wa.me/573001234567?text=Buenas%2C%20quiero%20visitar%20la%20finca%20para%20ver%20Vencedor%20FIV" target="_blank" rel="noopener">Visitar la finca</a>
+    </div>
+  </div>
+</article><article class="ejemplar" data-grupo="reproductores">
+  <div class="foto marco">FOTO · Toro gyr de perfil, fondo de establo</div>
+  <div class="cuerpo">
+    <div class="encab">
+      <div><h3>Roble del Llano</h3><div class="raza">Gyr lechero · Toro · 36 meses</div></div>
+      <div class="val">$54.000.000</div>
+    </div>
+    <p class="nota">Línea materna con promedio de 4.200 litros por lactancia. Ideal para cruce con Holstein.</p>
+    <table class="tabla-datos"><tbody><tr><th>Registro Asocebú</th><td>AC-00000</td></tr><tr><th>Producción materna</th><td>4.200 L / lactancia</td></tr><tr><th>DEP leche</th><td>+180 kg</td></tr><tr><th>Circunferencia escrotal</th><td>36 cm</td></tr><tr><th>Última evaluación genética</th><td>Febrero 2026</td></tr></tbody></table>
+    <div class="respaldo"><span>Registro Asocebú</span><span>Evaluación genética</span><span>Andrológico vigente</span></div>
+    <div class="acciones">
+      <a class="mini wa-ev" data-ev="lote_2" href="https://wa.me/573001234567?text=Buenas%2C%20me%20interesa%20Roble%20del%20Llano.%20%C2%BFMe%20pasa%20la%20ficha%20completa%3F" target="_blank" rel="noopener">Pedir ficha completa</a>
+      <a class="mini claro wa-ev" data-ev="visita_2" href="https://wa.me/573001234567?text=Buenas%2C%20quiero%20visitar%20la%20finca%20para%20ver%20Roble%20del%20Llano" target="_blank" rel="noopener">Visitar la finca</a>
+    </div>
+  </div>
+</article><article class="ejemplar" data-grupo="hembras">
+  <div class="foto marco">FOTO · Lote de novillas en potrero, plano abierto</div>
+  <div class="cuerpo">
+    <div class="encab">
+      <div><h3>Lote de 12 novillas</h3><div class="raza">Brahman comercial · 20 a 24 meses</div></div>
+      <div class="val">$4.200.000 c/u</div>
+    </div>
+    <p class="nota">Novillas listas para servicio, con peso uniforme entre 320 y 350 kg. Se vende el lote completo o por mitades.</p>
+    <table class="tabla-datos"><tbody><tr><th>Cantidad</th><td>12 cabezas</td></tr><tr><th>Peso promedio</th><td>334 kg</td></tr><tr><th>Edad</th><td>20 a 24 meses</td></tr><tr><th>Vacunación</th><td>Esquema completo al día</td></tr><tr><th>Palpación</th><td>Aptas para servicio</td></tr></tbody></table>
+    <div class="respaldo"><span>Registro sanitario ICA</span><span>Esquema de vacunación</span><span>Palpación certificada</span></div>
+    <div class="acciones">
+      <a class="mini wa-ev" data-ev="lote_3" href="https://wa.me/573001234567?text=Buenas%2C%20me%20interesa%20Lote%20de%2012%20novillas.%20%C2%BFMe%20pasa%20la%20ficha%20completa%3F" target="_blank" rel="noopener">Pedir ficha completa</a>
+      <a class="mini claro wa-ev" data-ev="visita_3" href="https://wa.me/573001234567?text=Buenas%2C%20quiero%20visitar%20la%20finca%20para%20ver%20Lote%20de%2012%20novillas" target="_blank" rel="noopener">Visitar la finca</a>
+    </div>
+  </div>
+</article><article class="ejemplar" data-grupo="hembras">
+  <div class="foto marco">FOTO · Vaca gyr en sala de ordeño</div>
+  <div class="cuerpo">
+    <div class="encab">
+      <div><h3>Estrella del Valle</h3><div class="raza">Gyr lechero · Vaca · 5 años</div></div>
+      <div class="val">$26.000.000</div>
+    </div>
+    <p class="nota">Vaca en producción con tres partos. Registro completo y control lechero mensual.</p>
+    <table class="tabla-datos"><tbody><tr><th>Registro Asocebú</th><td>AC-00000</td></tr><tr><th>Partos</th><td>3</td></tr><tr><th>Producción actual</th><td>19 L / día</td></tr><tr><th>Pico de lactancia</th><td>24 L / día</td></tr><tr><th>Último control lechero</th><td>Julio 2026</td></tr></tbody></table>
+    <div class="respaldo"><span>Registro Asocebú</span><span>Control lechero</span><span>Libre de brucelosis y tuberculosis</span></div>
+    <div class="acciones">
+      <a class="mini wa-ev" data-ev="lote_4" href="https://wa.me/573001234567?text=Buenas%2C%20me%20interesa%20Estrella%20del%20Valle.%20%C2%BFMe%20pasa%20la%20ficha%20completa%3F" target="_blank" rel="noopener">Pedir ficha completa</a>
+      <a class="mini claro wa-ev" data-ev="visita_4" href="https://wa.me/573001234567?text=Buenas%2C%20quiero%20visitar%20la%20finca%20para%20ver%20Estrella%20del%20Valle" target="_blank" rel="noopener">Visitar la finca</a>
+    </div>
+  </div>
+</article><article class="ejemplar" data-grupo="genetica">
+  <div class="foto marco">FOTO · Termo de nitrógeno abierto, pajillas en la canastilla</div>
+  <div class="cuerpo">
+    <div class="encab">
+      <div><h3>Pajillas · Vencedor FIV</h3><div class="raza">Semen congelado</div></div>
+      <div class="val">$180.000 por dosis</div>
+    </div>
+    <p class="nota">Mínimo 5 dosis. Se despacha en termo con nitrógeno a cualquier ciudad del país.</p>
+    <table class="tabla-datos"><tbody><tr><th>Dosis disponibles</th><td>400</td></tr><tr><th>Motilidad post-descongelación</th><td>≥ 35%</td></tr><tr><th>Concentración</th><td>20 millones / dosis</td></tr><tr><th>Despacho</th><td>48 a 72 horas</td></tr></tbody></table>
+    <div class="respaldo"><span>Certificado de calidad seminal</span><span>Registro del reproductor</span><span>Guía de movilización</span></div>
+    <div class="acciones">
+      <a class="mini wa-ev" data-ev="lote_5" href="https://wa.me/573001234567?text=Buenas%2C%20me%20interesa%20Pajillas%20%C2%B7%20Vencedor%20FIV.%20%C2%BFMe%20pasa%20la%20ficha%20completa%3F" target="_blank" rel="noopener">Pedir ficha completa</a>
+      <a class="mini claro wa-ev" data-ev="visita_5" href="https://wa.me/573001234567?text=Buenas%2C%20quiero%20visitar%20la%20finca%20para%20ver%20Pajillas%20%C2%B7%20Vencedor%20FIV" target="_blank" rel="noopener">Visitar la finca</a>
+    </div>
+  </div>
+</article><article class="ejemplar" data-grupo="genetica">
+  <div class="foto marco">FOTO · Pajillas etiquetadas, plano cerrado</div>
+  <div class="cuerpo">
+    <div class="encab">
+      <div><h3>Pajillas · Roble del Llano</h3><div class="raza">Semen congelado</div></div>
+      <div class="val">$140.000 por dosis</div>
+    </div>
+    <p class="nota">Mínimo 5 dosis. Recomendado para cruce con Holstein en clima cálido.</p>
+    <table class="tabla-datos"><tbody><tr><th>Dosis disponibles</th><td>250</td></tr><tr><th>Motilidad post-descongelación</th><td>≥ 35%</td></tr><tr><th>Concentración</th><td>20 millones / dosis</td></tr><tr><th>Despacho</th><td>48 a 72 horas</td></tr></tbody></table>
+    <div class="respaldo"><span>Certificado de calidad seminal</span><span>Registro del reproductor</span></div>
+    <div class="acciones">
+      <a class="mini wa-ev" data-ev="lote_6" href="https://wa.me/573001234567?text=Buenas%2C%20me%20interesa%20Pajillas%20%C2%B7%20Roble%20del%20Llano.%20%C2%BFMe%20pasa%20la%20ficha%20completa%3F" target="_blank" rel="noopener">Pedir ficha completa</a>
+      <a class="mini claro wa-ev" data-ev="visita_6" href="https://wa.me/573001234567?text=Buenas%2C%20quiero%20visitar%20la%20finca%20para%20ver%20Pajillas%20%C2%B7%20Roble%20del%20Llano" target="_blank" rel="noopener">Visitar la finca</a>
+    </div>
+  </div>
+</article><article class="ejemplar" data-grupo="genetica">
+  <div class="foto marco">FOTO · Laboratorio de reproducción, plano de trabajo</div>
+  <div class="cuerpo">
+    <div class="encab">
+      <div><h3>Embriones FIV</h3><div class="raza">Por encargo</div></div>
+      <div class="val">Desde $1.900.000</div>
+    </div>
+    <p class="nota">Se programan por lote, con la donadora y el toro que usted escoja del catálogo.</p>
+    <table class="tabla-datos"><tbody><tr><th>Tiempo de producción</th><td>60 a 90 días</td></tr><tr><th>Mínimo por lote</th><td>4 embriones</td></tr><tr><th>Transferencia</th><td>Se coordina con su veterinario</td></tr></tbody></table>
+    <div class="respaldo"><span>Contrato escrito</span><span>Trazabilidad del lote</span></div>
+    <div class="acciones">
+      <a class="mini wa-ev" data-ev="lote_7" href="https://wa.me/573001234567?text=Buenas%2C%20me%20interesa%20Embriones%20FIV.%20%C2%BFMe%20pasa%20la%20ficha%20completa%3F" target="_blank" rel="noopener">Pedir ficha completa</a>
+      <a class="mini claro wa-ev" data-ev="visita_7" href="https://wa.me/573001234567?text=Buenas%2C%20quiero%20visitar%20la%20finca%20para%20ver%20Embriones%20FIV" target="_blank" rel="noopener">Visitar la finca</a>
+    </div>
+  </div>
+</article>
+  <div class="legal">Los registros son expedidos por Asocebú; las pruebas de brucelosis y
+  tuberculosis, por laboratorio autorizado. La movilización de animales y el despacho de material
+  genético requieren guía sanitaria del ICA, que se tramita antes de cada envío. La ganadería
+  entrega copia de cada documento; no certifica por cuenta propia ningún resultado.</div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="rotulo">Calendario</div>
+  <h2>Dónde vamos a estar</h2>
+  <div class="agenda">
+    <div class="linea-ag"><b>Agroexpo</b><span>Julio · Bogotá · Pista y stand de genética</span></div>
+    <div class="linea-ag"><b>Feria Nacional Cebú</b><span>Octubre · Cuatro ejemplares inscritos</span></div>
+    <div class="linea-ag"><b>Remate anual de la finca</b><span>Noviembre · 30 lotes, catálogo por WhatsApp</span></div>
+    <div class="linea-ag"><b>Puertas abiertas</b><span>Primer sábado de cada mes, con cita</span></div>
+  </div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="rotulo">Cómo llegar</div>
+  <h2>Dónde queda</h2>
+  <div class="datos">
+    <div class="dato"><span>Dirección</span><span>Vereda La Esperanza, km 12</span></div>
+    <div class="dato"><span>Visitas</span><span>Con cita, de lunes a sábado</span></div>
+    <div class="dato"><span>Negociación</span><span>30% para separar el lote</span></div>
+    <div class="dato"><span>Despacho de genética</span><span>48 a 72 horas, todo el país</span></div>
+    <div class="dato"><span>Transporte de animales</span><span>Se coordina, se cotiza aparte</span></div>
+  </div>
+  <div class="mapas">
+    <a class="vinculo demo ev" data-ev="maps" href="#" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M19.527 4.799c1.212 2.608.937 5.678-.405 8.173-1.101 2.047-2.744 3.74-4.098 5.614-.619.858-1.244 1.75-1.669 2.727-.141.325-.263.658-.383.992-.121.333-.224.673-.34 1.008-.109.314-.236.684-.627.687h-.007c-.466-.001-.579-.53-.695-.887-.284-.874-.581-1.713-1.019-2.525-.51-.944-1.145-1.817-1.79-2.671L19.527 4.799zM8.545 7.705l-3.959 4.707c.724 1.54 1.821 2.863 2.871 4.18.247.31.494.622.737.936l4.984-5.925-.029.01c-1.741.601-3.691-.291-4.392-1.987a3.377 3.377 0 0 1-.209-.716c-.063-.437-.077-.761-.004-1.198l.001-.007zM5.492 3.149l-.003.004c-1.947 2.466-2.281 5.88-1.117 8.77l4.785-5.689-.058-.05-3.607-3.035zM14.661.436l-3.838 4.563a.295.295 0 0 1 .027-.01c1.6-.551 3.403.15 4.22 1.626.176.319.323.683.377 1.045.068.446.085.773.012 1.22l-.003.016 3.836-4.561A8.382 8.382 0 0 0 14.67.439l-.009-.003zM9.466 5.868L14.162.285l-.047-.012A8.31 8.31 0 0 0 11.986 0a8.439 8.439 0 0 0-6.169 2.766l-.016.018 3.665 3.084z"/></svg> Google Maps</a>
+    <a class="vinculo demo ev" data-ev="waze" href="#" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M13.218 0C9.915 0 6.835 1.49 4.723 4.148c-1.515 1.913-2.31 4.272-2.31 6.706v1.739c0 .894-.62 1.738-1.862 1.813-.298.025-.547.224-.547.522-.05.82.82 2.31 2.012 3.502.82.844 1.788 1.515 2.832 2.036a3 3 0 0 0 2.955 3.528 2.966 2.966 0 0 0 2.931-2.385h2.509c.323 1.689 2.086 2.856 3.974 2.21 1.64-.546 2.36-2.409 1.763-3.924a12.84 12.84 0 0 0 1.838-1.465 10.73 10.73 0 0 0 3.18-7.65c0-2.882-1.118-5.589-3.155-7.625A10.899 10.899 0 0 0 13.218 0zm0 1.217c2.558 0 4.967.994 6.78 2.807a9.525 9.525 0 0 1 2.807 6.78A9.526 9.526 0 0 1 20 17.585a9.647 9.647 0 0 1-6.78 2.807h-2.46a3.008 3.008 0 0 0-2.93-2.41 3.03 3.03 0 0 0-2.534 1.367v.024a8.945 8.945 0 0 1-2.41-1.788c-.844-.844-1.316-1.614-1.515-2.11a2.858 2.858 0 0 0 1.441-.846 2.959 2.959 0 0 0 .795-2.036v-1.789c0-2.11.696-4.197 2.012-5.861 1.863-2.385 4.62-3.726 7.6-3.726zm-2.41 5.986a1.192 1.192 0 0 0-1.191 1.192 1.192 1.192 0 0 0 1.192 1.193A1.192 1.192 0 0 0 12 8.395a1.192 1.192 0 0 0-1.192-1.192zm7.204 0a1.192 1.192 0 0 0-1.192 1.192 1.192 1.192 0 0 0 1.192 1.193 1.192 1.192 0 0 0 1.192-1.193 1.192 1.192 0 0 0-1.192-1.192zm-7.377 4.769a.596.596 0 0 0-.546.845 4.813 4.813 0 0 0 4.346 2.757 4.77 4.77 0 0 0 4.347-2.757.596.596 0 0 0-.547-.845h-.025a.561.561 0 0 0-.521.348 3.59 3.59 0 0 1-3.254 2.061 3.591 3.591 0 0 1-3.254-2.061.64.64 0 0 0-.546-.348z"/></svg> Waze</a>
+  </div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="rotulo">Antes de escribir</div>
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq">
+    <details open><summary>¿Los animales tienen registro?</summary><p>Todos los que aparecen como registrados lo tienen ante Asocebú, y se entrega copia antes de cerrar. Los lotes comerciales van identificados y con esquema sanitario, y así se dice en la ficha.</p></details>
+    <details><summary>¿Cómo se despachan las pajillas?</summary><p>En termo con nitrógeno, a cualquier ciudad del país, entre 48 y 72 horas. El pedido mínimo es de 5 dosis y va con guía de movilización del ICA.</p></details>
+    <details><summary>¿Puedo traer mi veterinario a revisar?</summary><p>Sí. El comprador puede traer su veterinario y hacer las pruebas que considere, por su cuenta y antes de cerrar.</p></details>
+    <details><summary>¿Qué significan los DEP que aparecen en las fichas?</summary><p>Son las diferencias esperadas en la progenie, calculadas en la evaluación genética de la asociación. Le indican qué puede esperar de los hijos de ese animal frente al promedio de la raza.</p></details>
+    <details><summary>¿El hato está libre de brucelosis y tuberculosis?</summary><p>Sí, con pruebas de laboratorio autorizado. Los certificados se entregan con cada negociación.</p></details>
+    <details><summary>¿Manejan el transporte?</summary><p>Lo coordinamos con transportadores conocidos y se cotiza aparte. Toda movilización requiere guía sanitaria del ICA, que se tramita antes del viaje.</p></details>
+  </div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="rotulo">Lo que dicen</div>
+  <h2>Reseñas en Google</h2>
+  <div class="resena"><div class="est">★★★★★</div><p>Compré 20 novillas en el remate del año pasado. Peso uniforme y papeles completos. Repito este año.</p><b>Álvaro C. · hace 5 meses</b></div>
+  <div class="resena"><div class="est">★★★★★</div><p>Trabajo con las pajillas de Vencedor desde hace dos años. Los terneros salen parejos y el despacho nunca ha fallado.</p><b>Luz Marina T. · hace 2 meses</b></div>
+</div></section>
+
+<div class="wrap pie">
+  <div class="qr"><svg viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg" data-w="33" data-h="33" class="segno"><path class="qrline" stroke="#22301f" d="M2 2.5h7m2 0h1m1 0h1m1 0h2m3 0h1m1 0h1m1 0h7m-29 1h1m5 0h1m1 0h4m2 0h1m2 0h1m2 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h3m3 0h3m2 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m2 0h2m1 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m4 0h3m2 0h1m1 0h3m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m3 0h3m1 0h1m1 0h2m2 0h1m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h3m4 0h2m2 0h1m-20 1h1m5 0h1m1 0h2m1 0h1m1 0h2m2 0h1m3 0h2m2 0h3m-28 1h1m3 0h1m3 0h2m1 0h5m2 0h2m3 0h2m1 0h2m-27 1h4m1 0h3m2 0h1m1 0h4m1 0h1m2 0h2m-23 1h2m2 0h2m6 0h1m1 0h1m1 0h1m2 0h3m2 0h2m-26 1h1m2 0h2m1 0h1m1 0h1m3 0h3m1 0h1m3 0h1m1 0h1m5 0h1m-29 1h1m1 0h2m1 0h1m3 0h1m1 0h1m3 0h5m2 0h3m2 0h2m-29 1h1m5 0h2m1 0h1m5 0h3m2 0h1m1 0h1m1 0h3m-26 1h1m1 0h1m1 0h1m1 0h2m3 0h1m1 0h1m3 0h1m4 0h2m1 0h1m1 0h1m-29 1h2m2 0h1m1 0h2m2 0h3m4 0h1m1 0h1m3 0h1m1 0h2m-27 1h1m2 0h1m4 0h1m4 0h1m1 0h1m2 0h3m1 0h3m1 0h3m-29 1h3m1 0h1m1 0h7m2 0h1m1 0h3m1 0h2m1 0h2m2 0h1m-29 1h1m1 0h4m2 0h1m2 0h1m1 0h1m5 0h3m-22 1h1m1 0h2m2 0h1m2 0h1m2 0h1m1 0h2m1 0h1m1 0h6m1 0h3m-21 1h4m2 0h2m2 0h1m1 0h1m3 0h2m-26 1h7m5 0h1m2 0h2m2 0h2m1 0h1m1 0h3m-27 1h1m5 0h1m7 0h1m3 0h3m3 0h1m2 0h2m-29 1h1m1 0h3m1 0h1m2 0h1m2 0h3m1 0h1m2 0h7m2 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m2 0h4m1 0h3m4 0h2m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h6m5 0h7m-28 1h1m5 0h1m2 0h2m1 0h1m2 0h2m4 0h1m3 0h2m1 0h1m-29 1h7m1 0h1m1 0h1m4 0h3m1 0h1m1 0h6"/></svg></div>
+  <p>El código va en el catálogo del remate, en el stand de la feria y en la tarjeta. Quien lo escanee llega a las fichas con registros y DEP.</p>
+</div>
+
+<section class="vitrina" id="suya"><div class="wrap">
+  <div class="rotulo">Esta es una página modelo</div>
+  <h2>Le hacemos la suya con el hierro y los animales de su finca</h2>
+  <p>Lo que acaba de recorrer es la estructura completa, con contenido de muestra. La
+  personalizamos con su hato, sus registros, sus DEP y su WhatsApp.</p>
+  <ul class="lista">
+    <li>Ficha por animal con registro, DEP y estado sanitario</li>
+    <li>Catálogo separado entre reproductores, hembras y genética</li>
+    <li>Un mensaje distinto por lote, ya escrito</li>
+    <li>Código QR para el catálogo del remate y el stand de la feria</li>
+  </ul>
+  <a class="cta ev" data-ev="lead_vitrina" href="https://wa.me/573192493401?text=Buenas%2C%20vi%20la%20p%C3%A1gina%20de%20la%20ganader%C3%ADa%20y%20quiero%20una%20para%20la%20m%C3%ADa" target="_blank" rel="noopener">Quiero la mía · escribir por WhatsApp</a>
+  <p class="fino">Le mostramos la suya armada antes de que decida.</p>
+</div></section>
+
+<div class="aviso" id="aviso"></div>
+
+<div class="fija"><div class="wrap">
+  <a class="wa-ev" data-ev="barra_fija" href="https://wa.me/573001234567?text=Buenas%2C%20vi%20el%20cat%C3%A1logo%20de%20la%20ganader%C3%ADa%20y%20quiero%20preguntarle%20algo" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> Escribir a la finca</a>
+  <a class="segundo ev" data-ev="llamar" href="tel:+573001234567"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 3.5h3l1.5 4-2 1.4a12 12 0 0 0 6.1 6.1l1.4-2 4 1.5v3c0 1-.8 1.8-1.8 1.7C10.6 18.6 5.4 13.4 4.8 5.3c-.1-1 .7-1.8 1.7-1.8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></a>
+</div></div>
+
+<script>
+var PIXEL_META = "";      // ej: "1234567890"
+var MEDICION_GA = "";     // ej: "G-XXXXXXX"
+
+(function(){
+  if(PIXEL_META){
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL_META); fbq('track', 'PageView');
+  }
+  if(MEDICION_GA){
+    var g=document.createElement('script'); g.async=true;
+    g.src='https://www.googletagmanager.com/gtag/js?id='+MEDICION_GA;
+    document.head.appendChild(g);
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=function(){dataLayer.push(arguments)};
+    gtag('js', new Date()); gtag('config', MEDICION_GA);
+  }
+
+  var p = new URLSearchParams(location.search);
+  var ref = p.get('utm_content') || p.get('utm_campaign') || p.get('ref') || '';
+  if(ref){
+    document.querySelectorAll('a.wa-ev').forEach(function(a){
+      a.href = a.href + encodeURIComponent(' (ref: ' + ref + ')');
+    });
+  }
+
+  /* filtro del catálogo */
+  var botones = document.querySelectorAll('.filtros button');
+  botones.forEach(function(b){
+    b.addEventListener('click', function(){
+      var f = b.dataset.filtro;
+      botones.forEach(function(o){ o.setAttribute('aria-pressed', o===b ? 'true':'false') });
+      document.querySelectorAll('.ejemplar').forEach(function(e){
+        e.hidden = (f !== 'todos' && e.dataset.grupo !== f);
+      });
+    });
+  });
+
+  /* los enlaces de muestra no dejan al visitante en el vacío */
+  var aviso = document.getElementById('aviso'), reloj;
+  document.querySelectorAll('a.demo').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      aviso.textContent = 'En su página, este botón abre su perfil.';
+      aviso.classList.add('ver');
+      clearTimeout(reloj);
+      reloj = setTimeout(function(){ aviso.classList.remove('ver') }, 2600);
+    });
+  });
+
+  var LEADS = ["lote_", "visita_", "barra_fija"];
+  document.querySelectorAll('a.ev, a.wa-ev').forEach(function(a){
+    a.addEventListener('click', function(){
+      var n = a.dataset.ev || 'clic';
+      var lead = LEADS.some(function(x){ return n.indexOf(x)===0 });
+      if(window.fbq) fbq('track', lead ? 'Lead':'ViewContent', {content_name:n, source:ref});
+      if(window.gtag) gtag('event', lead ? 'contacto':'interaccion', {metodo:n, origen:ref});
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
