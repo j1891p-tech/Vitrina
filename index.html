@@ -202,6 +202,15 @@ h2{font-size:28px;margin-bottom:16px}
 .no-lista li::before{content:"";position:absolute;left:0;top:.66em;width:15px;height:2px;
   background:var(--acento);opacity:.75}
 
+.cifras{display:grid;gap:12px;grid-template-columns:1fr;margin:4px 0 18px}
+.cifra{background:var(--carta);border:1px solid var(--marco);border-radius:18px;padding:18px 20px}
+.cifra .dato{font-size:40px;line-height:1;color:var(--acento)}
+.cifra p{font-size:15px;color:var(--suave);margin-top:7px}
+.fuente{font-size:12.5px;color:var(--suave);margin-top:14px}
+.continua{background:var(--carta);border:1px solid var(--marco);border-radius:18px;padding:18px 20px;margin-top:12px}
+.continua h3{font-size:19px;margin-bottom:4px}
+@media(min-width:720px){.cifras{grid-template-columns:repeat(3,1fr)}}
+
 /* ─── visor de demos ───────────────────────────────────────────────
    Las demos abren dentro de esta misma página, en una capa con barra
    fija arriba. Así siempre hay un camino de vuelta visible, que en la
@@ -243,9 +252,9 @@ body.vt-quieto{overflow:hidden}
 <body>
 
 <header class="top"><div class="wrap">
-  <div class="mono">Vitrina · páginas para negocios de puertas abiertas</div>
-  <h1>Su negocio, encontrable en el mapa</h1>
-  <p class="sub">Quien no lo conoce lo busca en Google Maps. Si no aparece bien, no existe.</p>
+  <div class="mono">Vitrina · páginas para negocios que venden todos los días</div>
+  <h1>Su negocio, donde lo buscan</h1>
+  <p class="sub">Lo buscan en Google Maps, en Instagram, en TikTok. Si no aparece bien, no existe.</p>
 </div></header>
 
 <section class="seccion"><div class="wrap">
@@ -306,9 +315,23 @@ body.vt-quieto{overflow:hidden}
 </div></section>
 
 <section class="seccion"><div class="wrap">
+  <div class="rotulo">Por qué ahora</div>
+  <h2>Su negocio ya está conectado</h2>
+  <div class="cifras">
+    <div class="cifra"><div class="dato">9 de 10</div><p>de los colombianos que entran a internet lo hacen desde el celular.</p></div>
+    <div class="cifra"><div class="dato">8 de 10</div><p>lo usan principalmente para redes sociales.</p></div>
+    <div class="cifra"><div class="dato">32 % → 57 %</div><p>subió el acceso a internet en el campo en tres años.</p></div>
+  </div>
+  <p class="apoyo">Su cliente ya lo está buscando, desde el celular, en donde pasa el día. Lo que usted publica en redes funciona, pero dura un día y se lo lleva el scroll.</p>
+  <p class="apoyo">Y la línea entre el negocio con puerta y el que vende por WhatsApp se está borrando. El taller abre local. La veterinaria empieza a despachar por encargo. La marca que vendía por Instagram monta punto de venta. El mismo lugar sirve para los dos: se enciende una sección y se apaga otra, sin rehacer nada.</p>
+  <p class="fuente">Fuente: DANE, Encuesta de Calidad de Vida.</p>
+</div></section>
+
+<section class="seccion"><div class="wrap">
   <div class="rotulo">Muestrario</div>
   <h2>Negocios como el suyo</h2>
-  <p class="apoyo">Cada uno abre completo. Ábralos en el celular: es donde los va a ver su cliente.</p>
+  <p class="apoyo">Cada uno abre completo y funcionando. Se ven primero en el celular, que es exactamente como los va a ver su cliente.</p>
+  <p class="apoyo">Cada demo se personaliza a la necesidad del negocio. Y si alguno le gusta tal como está, se puede dejar así.</p>
   <details class="demo" data-puerta="A">
     <summary>
       <span class="mini"><img src="img/mini-patitas-felices.webp" alt="" loading="lazy"
@@ -441,52 +464,57 @@ body.vt-quieto{overflow:hidden}
   <div class="rotulo">Cómo funciona</div>
   <h2>Tres pasos y ya está publicada</h2>
   <div class="pasos">
-    <div class="paso"><div class="num">1</div><h3>Le mostramos la suya</h3><p>Construimos la página con el nombre y las fotos públicas de su negocio y se la enviamos hecha.</p></div>
-    <div class="paso"><div class="num">2</div><h3>Usted la revisa y decide</h3><p>La demo funciona completa: el WhatsApp escribe, el QR abre, los botones llevan a donde dicen. No hay que imaginarse nada.</p></div>
-    <div class="paso"><div class="num">3</div><h3>La publicamos y queda suya</h3><p>Se conecta el dominio a su nombre, se imprime el QR y queda andando. Una sola vez, sin mensualidad obligatoria.</p></div>
+    <div class="paso"><div class="num">1</div><h3>Armamos el contenido</h3><p>Fotos, textos, servicios y lo que ya publica en redes, ordenado en secciones que su cliente entiende de una.</p></div>
+    <div class="paso"><div class="num">2</div><h3>Construimos y publicamos</h3><p>Página completa, código QR propio y WhatsApp con un mensaje distinto por producto. Queda andando y queda suya.</p></div>
+    <div class="paso"><div class="num">3</div><h3>Conectamos el circuito</h3><p>Ficha de Google, Instagram y TikTok apuntando a la página, y la página apuntando a su WhatsApp. Lo que publica deja de perderse.</p></div>
   </div>
 </div></section>
 
 <section class="seccion"><div class="wrap">
   <div class="rotulo">Alcance</div>
-  <h2>Qué incluye y qué no</h2>
+  <h2>Qué incluye</h2>
   <div class="alcance">
     <div class="caja-a">
       <h3>Va incluido</h3>
-      <p class="guia">En el precio que se acuerda al principio.</p>
-      <div class="item-al"><b>Página completa funcionando</b><small>Secciones, contenido, fotos optimizadas, enlaces, WhatsApp y código QR</small></div>
-      <div class="item-al"><b>Ficha de Google Business</b><small>Creada y configurada, enlazada a la página</small></div>
-      <div class="item-al"><b>Instagram</b><small>Cuenta abierta y configurada, enlazada a la página</small></div>
-      <div class="item-al"><b>TikTok</b><small>Cuenta abierta y configurada, enlazada a la página</small></div>
-      <div class="item-al"><b>WhatsApp Business</b><small>Configurado y enlazado desde la página</small></div>
+      <p class="guia">Pago único. Precio cerrado al principio.</p>
+      <div class="item-al"><b>Página completa funcionando</b><small>Secciones, contenido, fotos optimizadas, enlaces y código QR</small></div>
+      <div class="item-al"><b>Ficha de Google Business</b><small>Si no la tiene, se crea y se configura. Si ya la tiene, se conecta y se deja al día</small></div>
+      <div class="item-al"><b>Sus redes en la página</b><small>Espacio para TikTok, Instagram, Facebook, YouTube y Google, enlazado a sus perfiles</small></div>
+      <div class="item-al"><b>WhatsApp desde cada producto</b><small>Cada uno abre el chat con un mensaje distinto, ya escrito</small></div>
+      <div class="item-al"><b>Guía de uso de las redes</b><small>Por escrito: qué publicar, cada cuánto y cómo enlazarlo a la página. No se cobra aparte</small></div>
       <p class="aporte">Usted nos suministra el material gráfico. Si tiene guion, videos u observaciones puntuales, el resultado sale más profesional.</p>
     </div>
     <div class="caja-b">
-      <h3>Aparte</h3>
-      <p class="guia">Se cobra por separado. Se dice antes, no después.</p>
-      <div class="item-al"><b>Panel para editar usted mismo</b><span class="chip">Opcional</span><small>Cambiar productos, precios, fotos y textos sin llamarnos</small></div>
-      <div class="item-al"><b>Mantenimiento mensual</b><span class="chip">Costo mensual</span><small>Fotos, productos, precios y textos al día</small></div>
-      <div class="item-al"><b>Dominio propio</b><span class="chip">Anual</span><small>Se paga aparte y queda a nombre suyo</small></div>
+      <h3>Complementos</h3>
+      <p class="guia">Se cotizan por separado, según la sección que se desarrolle.</p>
+      <div class="item-al"><b>Módulo para editar usted mismo</b><small>Cambiar productos, precios, fotos y textos sin llamarnos</small></div>
+      <div class="item-al"><b>Secciones adicionales</b><small>Las que su negocio necesite. Se acuerdan antes de empezar</small></div>
+      <div class="item-al"><b>Material gráfico</b><small>Fotos y piezas preparadas por nosotros para la página y las redes</small></div>
     </div>
+  </div>
+  <div class="continua">
+    <h3>Lo que continúa después</h3>
+    <p class="guia">No es obligatorio y se acuerda con usted.</p>
+    <div class="item-al"><b>Dominio personalizado, si lo necesita</b><span class="chip">Anual</span></div>
+    <div class="item-al"><b>Actualización mensual</b><span class="chip">Mensual</span><small>Fotos, productos, precios y textos al día</small></div>
   </div>
   <div class="caja-c">
     <h3>Lo que no incluye</h3>
-    <p class="guia">Se dice antes, no cuando ya se pagó.</p>
+    <p class="guia">Esto no hace parte del alcance. Si lo necesita, se cotiza aparte.</p>
     <ul class="no-lista">
       <li>Carrito y pagos en línea</li>
       <li>Inventario en tiempo real</li>
       <li>Usuarios con clave</li>
       <li>Agenda que confirma sola</li>
-      <li>Administración de sus redes</li>
-      <li>Publicidad paga</li>
+      <li>Software personalizado o desarrollo particular</li>
     </ul>
   </div>
 </div></section>
 
 <section class="seccion"><div class="wrap"><div class="cierre">
-  <h2>Le hacemos la suya antes de que decida</h2>
-  <p>Con el nombre y las fotos de su negocio, para que la vea funcionando y no se la tenga que imaginar.</p>
-  <a class="wa-ev" data-ev="cierre" href="https://wa.me/573192493401?text=Buenas%2C%20quiero%20ver%20la%20de%20mi%20negocio" target="_blank" rel="noopener">Ver la mía</a>
+  <h2>Anímese a desarrollar su vitrina en internet</h2>
+  <p>Una sola página, que abre en segundos en un celular con datos, que cabe en un código QR y que ningún algoritmo le puede cerrar. Se hace una vez y queda suya.</p>
+  <a class="wa-ev" data-ev="cierre" href="https://wa.me/573192493401?text=Buenas%2C%20quiero%20consultar%20por%20mi%20vitrina" target="_blank" rel="noopener">Escribir al 319 249 3401</a>
 </div></div></section>
 
 <div class="wrap pie">
