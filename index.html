@@ -221,7 +221,9 @@ h2{font-size:28px;margin-bottom:16px}
 .post .foto{width:64px;height:64px}
 
 .alcance{display:grid;gap:12px;grid-template-columns:1fr}
-@media(min-width:720px){.alcance{grid-template-columns:1fr 1fr}}
+@media(min-width:720px){.alcance{grid-template-columns:1fr 1fr}
+/* con una sola caja, ocupa el ancho: la mitad vacía se lee como error */
+.alcance:has(>:only-child){grid-template-columns:1fr}}
 .caja-a,.caja-b{background:var(--carta);border:1px solid var(--marco);border-radius:18px;padding:18px 20px}
 .caja-b{align-self:start}
 .caja-a h3,.caja-b h3{font-size:21px;margin-bottom:4px}
@@ -511,43 +513,20 @@ body.vt-quieto{overflow:hidden}
 </div></section>
 
 <section class="seccion"><div class="wrap">
-  <div class="rotulo">Alcance</div>
-  <h2>Qué incluye</h2>
+  <div class="rotulo">Qué recibe</div>
+  <h2>Qué queda funcionando</h2>
   <div class="alcance">
     <div class="caja-a">
-      <h3>Va incluido</h3>
-      <p class="guia">Pago único. Precio cerrado al principio.</p>
+      <h3>Lo que queda andando</h3>
+      <p class="guia">Precio cerrado, acordado antes de empezar.</p>
       <div class="item-al"><b>Página completa funcionando</b><small>Secciones, contenido, fotos optimizadas, enlaces y código QR</small></div>
       <div class="item-al"><b>Ficha de Google Business</b><small>Si no la tiene, se crea y se configura. Si ya la tiene, se conecta y se deja al día</small></div>
       <div class="item-al"><b>Sus redes en la página</b><small>Espacio para TikTok, Instagram, Facebook, YouTube y Google, enlazado a sus perfiles</small></div>
       <div class="item-al"><b>WhatsApp desde cada producto</b><small>Cada uno abre el chat con un mensaje distinto, ya escrito</small></div>
       <div class="item-al"><b>Guía de uso de las redes</b><small>Por escrito: qué publicar, cada cuánto y cómo enlazarlo a la página. No se cobra aparte</small></div>
       <p class="aporte">Usted nos suministra el material gráfico. Si tiene guion, videos u observaciones puntuales, el resultado sale más profesional.</p>
+      <p class="aporte"><b>Esto es la base, y se arma sobre su negocio. Si de acuerdo con su necesidad requiere el desarrollo de secciones nuevas —un catálogo, un calendario, un módulo para cambiar precios y fotos desde su celular, una tienda en línea con pagos, un software a la medida de su operación u otro desarrollo que su negocio requiera— se desarrolla y se acuerda antes de empezar.</b></p>
     </div>
-    <div class="caja-b">
-      <h3>Complementos</h3>
-      <p class="guia">Se cotizan por separado, según la sección que se desarrolle.</p>
-      <div class="item-al"><b>Módulo para editar usted mismo</b><small>Cambiar productos, precios, fotos y textos sin llamarnos</small></div>
-      <div class="item-al"><b>Secciones adicionales</b><small>Las que su negocio necesite. Se acuerdan antes de empezar</small></div>
-      <div class="item-al"><b>Material gráfico</b><small>Fotos y piezas preparadas por nosotros para la página y las redes</small></div>
-    </div>
-  </div>
-  <div class="continua">
-    <h3>Lo que continúa después</h3>
-    <p class="guia">No es obligatorio y se acuerda con usted.</p>
-    <div class="item-al"><b>Dominio personalizado, si lo necesita</b><span class="chip">Anual</span></div>
-    <div class="item-al"><b>Actualización mensual</b><span class="chip">Mensual</span><small>Fotos, productos, precios y textos al día</small></div>
-  </div>
-  <div class="caja-c">
-    <h3>Lo que no incluye</h3>
-    <p class="guia">Esto no hace parte del alcance. Si lo necesita, se cotiza aparte.</p>
-    <ul class="no-lista">
-      <li>Carrito y pagos en línea</li>
-      <li>Inventario en tiempo real</li>
-      <li>Usuarios con clave</li>
-      <li>Agenda que confirma sola</li>
-      <li>Software personalizado o desarrollo particular</li>
-    </ul>
   </div>
 </div></section>
 
