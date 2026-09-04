@@ -49,7 +49,6 @@
       "url": "https://vitrina.com.co/",
       "image": "https://vitrina.com.co/vitrina-og.png",
       "description": "Páginas para negocios pequeños: un solo lugar donde no se pierde lo que se publica en redes, con la ficha de Google, las redes y el WhatsApp del negocio en un mismo enlace.",
-      "telephone": "+573192493401",
       "areaServed": { "@type": "Country", "name": "Colombia" },
       "availableLanguage": "es"
     }
@@ -221,6 +220,33 @@ h2{font-size:28px;margin-bottom:16px}
 .post .foto{width:64px;height:64px}
 
 .alcance{display:grid;gap:12px;grid-template-columns:1fr}
+/* Línea de tiempo: avanza sola de izquierda a derecha cuando entra en
+   pantalla y se queda quieta en "Hoy". No se repite en bucle a propósito:
+   volver a empezar en "Antes" borra el argumento. El visitante puede
+   arrastrarla con el dedo en cualquier momento. */
+.tira-vit{overflow-x:auto;scroll-behavior:auto;margin-top:22px;padding-bottom:12px;
+  scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.tira-vit::-webkit-scrollbar{height:5px}
+.tira-vit::-webkit-scrollbar-thumb{background:var(--marco);border-radius:9px}
+.evolucion{display:flex;gap:14px;width:max-content;padding-right:14px}
+.hito{width:min(74vw,262px);flex:none}
+/* el eje va dentro de la tira, no encima: así cada fecha queda sobre su
+   tarjeta y no se despega cuando el visitante la arrastra */
+.marca{position:relative;padding-bottom:18px;margin-bottom:11px}
+.marca::before{content:"";position:absolute;left:5px;right:-14px;bottom:5px;
+  height:2px;background:var(--marco)}
+.hito:last-child .marca::before{display:none}
+.marca i{position:absolute;left:0;bottom:0;width:11px;height:11px;border-radius:50%;
+  background:var(--marco);box-shadow:0 0 0 3px var(--papel)}
+.hito:last-child .marca i{background:var(--acento)}
+.fecha{display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--acento);font-weight:600}
+.paso-vit{background:var(--carta);border:1px solid var(--marco);border-radius:14px;
+  overflow:hidden;opacity:.5;transition:opacity .8s ease}
+.paso-vit.viva{opacity:1}
+.paso-vit img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.paso-vit p{padding:13px 15px 15px;font-size:15px;line-height:1.5;color:var(--tinta);margin:0}
+@media(prefers-reduced-motion:reduce){.paso-vit{opacity:1;transition:none}}
 @media(min-width:720px){.alcance{grid-template-columns:1fr 1fr}
 /* con una sola caja, ocupa el ancho: la mitad vacía se lee como error */
 .alcance:has(>:only-child){grid-template-columns:1fr}}
@@ -376,7 +402,7 @@ body.vt-quieto{overflow:hidden}
   <p class="apoyo">Cada demo se personaliza a la necesidad del negocio. Y si alguno le gusta tal como está, se puede dejar así.</p>
   <details class="demo" data-puerta="A">
     <summary>
-      <span class="mini"><img src="img/mini-patitas-felices.webp" alt="" loading="lazy"
+      <span class="mini"><img src="img/icono-patitas-felices.webp" alt="" loading="lazy"
         onerror="this.replaceWith(document.createTextNode('FOTO'))"></span>
       <span><h3>Patitas Felices</h3><span class="giro">Veterinaria y tienda · Perros y gatos</span></span>
       <span class="marbete">Vienen a mi negocio</span>
@@ -394,7 +420,7 @@ body.vt-quieto{overflow:hidden}
   </details>
   <details class="demo" data-puerta="A">
     <summary>
-      <span class="mini"><img src="img/mini-la-alameda.webp" alt="" loading="lazy"
+      <span class="mini"><img src="img/icono-la-alameda.webp" alt="" loading="lazy"
         onerror="this.replaceWith(document.createTextNode('FOTO'))"></span>
       <span><h3>Hotel La Alameda</h3><span class="giro">Alojamiento familiar · Centro del pueblo</span></span>
       <span class="marbete">Vienen a mi negocio</span>
@@ -412,7 +438,7 @@ body.vt-quieto{overflow:hidden}
   </details>
   <details class="demo" data-puerta="A">
     <summary>
-      <span class="mini"><img src="img/mini-el-naranjal.webp" alt="" loading="lazy"
+      <span class="mini"><img src="img/icono-el-naranjal.webp" alt="" loading="lazy"
         onerror="this.replaceWith(document.createTextNode('FOTO'))"></span>
       <span><h3>Hacienda El Naranjal</h3><span class="giro">Bodas · Quince años · Eventos de empresa</span></span>
       <span class="marbete">Vienen a mi negocio</span>
@@ -430,7 +456,7 @@ body.vt-quieto{overflow:hidden}
   </details>
   <details class="demo" data-puerta="A">
     <summary>
-      <span class="mini"><img src="img/mini-criadero-el-alto.webp" alt="" loading="lazy"
+      <span class="mini"><img src="img/icono-criadero-el-alto.webp" alt="" loading="lazy"
         onerror="this.replaceWith(document.createTextNode('FOTO'))"></span>
       <span><h3>Criadero El Alto</h3><span class="giro">Paso fino colombiano · Cría, monta y entrenamiento</span></span>
       <span class="marbete">Vienen a mi negocio</span>
@@ -448,7 +474,7 @@ body.vt-quieto{overflow:hidden}
   </details>
   <details class="demo" data-puerta="A">
     <summary>
-      <span class="mini"><img src="img/mini-ganaderia-la-esperanza.webp" alt="" loading="lazy"
+      <span class="mini"><img src="img/icono-ganaderia-la-esperanza.webp" alt="" loading="lazy"
         onerror="this.replaceWith(document.createTextNode('FOTO'))"></span>
       <span><h3>Ganadería La Esperanza</h3><span class="giro">Brahman y Gyr de registro · Reproductores, hembras y genética</span></span>
       <span class="marbete">Vienen a mi negocio</span>
@@ -466,7 +492,7 @@ body.vt-quieto{overflow:hidden}
   </details>
   <details class="demo" data-puerta="A">
     <summary>
-      <span class="mini"><img src="img/mini-inmobiliaria-los-cedros.webp" alt="" loading="lazy"
+      <span class="mini"><img src="img/icono-inmobiliaria-los-cedros.webp" alt="" loading="lazy"
         onerror="this.replaceWith(document.createTextNode('FOTO'))"></span>
       <span><h3>Inmobiliaria Los Cedros</h3><span class="giro">Arriendos · Ventas · Lotes · Propiedad horizontal</span></span>
       <span class="marbete">Vienen a mi negocio</span>
@@ -484,7 +510,7 @@ body.vt-quieto{overflow:hidden}
   </details>
   <details class="demo" data-puerta="A">
     <summary>
-      <span class="mini"><img src="img/mini-mercado-la-cosecha.webp" alt="" loading="lazy"
+      <span class="mini"><img src="img/icono-mercado-la-cosecha.webp" alt="" loading="lazy"
         onerror="this.replaceWith(document.createTextNode('FOTO'))"></span>
       <span><h3>Mercado La Cosecha</h3><span class="giro">Fruver y mercado a domicilio · Pedidos antes de las 3 p. m.</span></span>
       <span class="marbete">Vienen a mi negocio</span>
@@ -501,6 +527,107 @@ body.vt-quieto{overflow:hidden}
     </div>
   </details>
 </div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="rotulo">De dónde viene el nombre</div>
+  <h2>La vitrina siempre existió. Cambió de sitio.</h2>
+  <p class="apoyo">Un negocio siempre ha tenido dónde mostrar lo que vende. Lo que cambia cada tantos años es dónde queda esa vitrina, y quién pasa por el frente. <span class="acota">Fechas aproximadas.</span></p>
+  <div class="tira-vit" id="tira-vit"><div class="evolucion">
+    <div class="hito">
+      <div class="marca"><span class="fecha">Hasta 1950</span><i></i></div>
+      <div class="paso-vit">
+        <img src="img/vitrina-1-vidrio.webp" alt="Vitrina de vidrio de una tienda de barrio" loading="lazy">
+        <p>Solo existía lo que le quedaba de paso.</p>
+      </div>
+    </div>
+    <div class="hito">
+      <div class="marca"><span class="fecha">1955</span><i></i></div>
+      <div class="paso-vit">
+        <img src="img/vitrina-radio-tv.webp" alt="Radio de mesa y televisor de tubo sobre un mueble" loading="lazy">
+        <p>Se oía en la radio y se veía en televisión.</p>
+      </div>
+    </div>
+    <div class="hito">
+      <div class="marca"><span class="fecha">1970</span><i></i></div>
+      <div class="paso-vit">
+        <img src="img/vitrina-prensa.webp" alt="Periódico abierto en la página de clasificados" loading="lazy">
+        <p>Se buscaba en los clasificados del periódico.</p>
+      </div>
+    </div>
+    <div class="hito">
+      <div class="marca"><span class="fecha">1990</span><i></i></div>
+      <div class="paso-vit">
+        <img src="img/vitrina-2-aviso.webp" alt="Aviso de fachada y directorio telefónico" loading="lazy">
+        <p>Se buscaba por el nombre en el directorio.</p>
+      </div>
+    </div>
+    <div class="hito">
+      <div class="marca"><span class="fecha">2005</span><i></i></div>
+      <div class="paso-vit">
+        <img src="img/vitrina-3-web.webp" alt="Página web en un computador de escritorio" loading="lazy">
+        <p>Se buscaba desde la casa, en un computador.</p>
+      </div>
+    </div>
+    <div class="hito">
+      <div class="marca"><span class="fecha">2015</span><i></i></div>
+      <div class="paso-vit">
+        <img src="img/vitrina-4-celular.webp" alt="Cuadrícula de productos en un celular" loading="lazy">
+        <p>Se busca en el celular, y aparece o no aparece.</p>
+      </div>
+    </div>
+  </div></div>
+</div></section>
+
+<script>
+(function(){
+  var riel = document.getElementById('tira-vit');
+  if(!riel) return;
+  var fichas = riel.querySelectorAll('.paso-vit');
+  var quieto = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches);
+  var tocado = false, andando = false;
+
+  ['pointerdown','wheel','touchstart','keydown'].forEach(function(e){
+    riel.addEventListener(e, function(){ tocado = true; }, {passive:true});
+  });
+
+  function encender(){                       // las fichas se aclaran al pasar
+    var b = riel.getBoundingClientRect();
+    fichas.forEach(function(f){
+      var c = f.getBoundingClientRect();
+      f.classList.toggle('viva', c.left < b.right - 40 && c.right > b.left + 40);
+    });
+  }
+  riel.addEventListener('scroll', encender, {passive:true});
+
+  function recorrer(){
+    if(andando) return;
+    andando = true;
+    var meta = riel.scrollWidth - riel.clientWidth;
+    if(meta < 10 || quieto){ fichas.forEach(function(f){ f.classList.add('viva'); }); return; }
+    var t0 = null, dur = 13500, espera = 1300;
+    function paso(t){
+      if(t0 === null) t0 = t;
+      var p = (t - t0 - espera) / dur;
+      if(tocado) { encender(); return; }       // si el visitante la agarra, se suelta
+      if(p > 0){
+        // 70% parejo y 30% suavizado: entra y sale con calma sin frenar en seco
+        var s = p * p * (3 - 2 * p);
+        riel.scrollLeft = meta * Math.min(1, 0.7 * p + 0.3 * s);
+      }
+      encender();
+      if(p < 1) requestAnimationFrame(paso);
+    }
+    requestAnimationFrame(paso);
+  }
+
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){
+      if(e[0].isIntersecting) recorrer();
+    }, {threshold:.35}).observe(riel);
+  } else { recorrer(); }
+  encender();
+})();
+</script>
 
 <section class="seccion"><div class="wrap">
   <div class="rotulo">Cómo funciona</div>
@@ -533,7 +660,7 @@ body.vt-quieto{overflow:hidden}
 <section class="seccion"><div class="wrap"><div class="cierre">
   <h2>Anímese a desarrollar su vitrina en internet</h2>
   <p>Una sola página, que abre en segundos en un celular con datos, que cabe en un código QR y que ningún algoritmo le puede cerrar. Se hace una vez y queda suya.</p>
-  <a class="wa-ev" data-ev="cierre" href="https://wa.me/573192493401?text=Buenas%2C%20quiero%20consultar%20por%20mi%20vitrina" target="_blank" rel="noopener">Escribir al 319 249 3401</a>
+  <a class="wa-ev" data-ev="cierre" href="https://wa.me/573192493401?text=Buenas%2C%20quiero%20consultar%20por%20mi%20vitrina" target="_blank" rel="noopener">Escribir por WhatsApp</a>
 </div></div></section>
 
 <div class="wrap pie">
