@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!-- Vitrina · Consultorio odontológico · con local · demo -->
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página web para consultorio odontológico — ejemplo | Vitrina</title>
+<meta name="description" content="Vea funcionando la página de un consultorio odontológico: valoración, tratamientos, urgencias y citas por WhatsApp. Le hacemos la suya.">
+<link rel="canonical" href="https://vitrina.com.co/dental-el-roble.html">
+<meta name="theme-color" content="#3B5A80">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vitrina">
+<meta property="og:locale" content="es_CO">
+<meta property="og:title" content="Así se vería la página de su consultorio">
+<meta property="og:description" content="Tratamientos, urgencias y citas por WhatsApp, con su ficha de Google.">
+<meta property="og:image" content="https://vitrina.com.co/vitrina-og.png">
+<meta property="og:url" content="https://vitrina.com.co/dental-el-roble.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Página web para consultorio odontológico — ejemplo | Vitrina",
+  "description": "Vea funcionando la página de un consultorio odontológico: valoración, tratamientos, urgencias y citas por WhatsApp. Le hacemos la suya.",
+  "url": "https://vitrina.com.co/dental-el-roble.html",
+  "inLanguage": "es-CO",
+  "isPartOf": { "@type": "WebSite", "name": "Vitrina", "url": "https://vitrina.com.co/" },
+  "about": { "@type": "Thing", "name": "Páginas web para consultorios odontológicos" },
+  "publisher": { "@type": "Organization", "name": "Vitrina", "url": "https://vitrina.com.co/" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--papel:#ECF0F5;--tinta:#232E3C;--suave:#5C6879;--acento:#3B5A80;
+  --pastel:#D8E2EE;--marco:#C7D5E4;--marcotxt:#3C4E64;--carta:#F9FBFD;
+  --max:840px;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--papel);color:var(--tinta);font-family:'Public Sans',system-ui,sans-serif;
+  font-size:16.5px;line-height:1.58;-webkit-font-smoothing:antialiased;padding-bottom:78px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:'Outfit',system-ui,sans-serif;line-height:1.12}
+a{color:inherit}
+.rotulo{font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--acento);font-weight:700;margin-bottom:5px}
+.seccion{padding:30px 0}
+.seccion h2{font-size:25px;margin-bottom:14px}
+.apoyo{color:var(--suave);font-size:15.5px;max-width:48ch;margin-bottom:16px}
+
+.top{padding:28px 0 22px}
+.top h1{font-size:clamp(33px,9vw,50px);margin-bottom:8px}
+.top .oficio{color:var(--suave);font-size:16.5px;max-width:40ch}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.chip{background:var(--pastel);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
+
+.redes{display:grid;gap:9px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:560px){.redes{grid-template-columns:repeat(5,1fr)}}
+.red{display:block;text-decoration:none;background:var(--carta);border:1px solid var(--marco);
+  border-radius:14px;padding:13px 14px}
+.red b{display:block;font-size:14.5px}
+.red small{font-size:11.5px;color:var(--suave)}
+
+.feed{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:620px){.feed{grid-template-columns:repeat(4,1fr)}}
+.clip{aspect-ratio:9/16;background:var(--marco);color:var(--marcotxt);border-radius:13px;
+  display:grid;place-items:center;text-align:center;font-size:10.5px;padding:8px;letter-spacing:.05em}
+
+.serv{background:var(--carta);border:1px solid var(--marco);border-radius:var(--r);
+  padding:16px 17px;margin-bottom:10px}
+.serv .fila{display:flex;gap:14px;justify-content:space-between;align-items:flex-start}
+.serv h3{font-size:17px;margin-bottom:3px}
+.serv p{font-size:14.5px;color:var(--suave);max-width:52ch}
+.serv .val{font-size:15px;font-weight:700;white-space:nowrap;color:var(--acento)}
+.mini{display:inline-block;margin-top:11px;text-decoration:none;background:var(--acento);
+  color:var(--carta);border-radius:11px;padding:10px 17px;font-size:14px;font-weight:700}
+
+.dos{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:640px){.dos{grid-template-columns:1fr 1fr}}
+.caja{background:var(--carta);border:1px solid var(--marco);border-radius:var(--r);padding:17px}
+.caja h3{font-size:16px;margin-bottom:7px}
+.caja p,.caja li{font-size:14.5px;color:var(--suave)}
+.caja ul{list-style:none;margin-top:4px}
+.caja li{padding:5px 0 5px 17px;position:relative}
+.caja li::before{content:"";position:absolute;left:0;top:.85em;width:7px;height:7px;
+  border-radius:50%;background:var(--acento)}
+.retrato{aspect-ratio:1/1;max-width:150px;background:var(--marco);color:var(--marcotxt);
+  border-radius:16px;display:grid;place-items:center;font-size:11px;text-align:center;padding:8px;margin-bottom:12px}
+
+.mapas{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+.mapa{text-decoration:none;background:var(--pastel);border-radius:11px;
+  padding:10px 16px;font-size:14px;font-weight:600}
+
+.faq details{background:var(--carta);border:1px solid var(--marco);border-radius:14px;
+  padding:13px 16px;margin-bottom:8px}
+.faq summary{cursor:pointer;font-weight:700;font-size:15.5px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--acento)}
+.faq details[open] summary::after{content:"–"}
+.faq p{font-size:14.5px;color:var(--suave);margin-top:8px}
+
+.resenas{display:grid;gap:10px;grid-template-columns:1fr}
+@media(min-width:640px){.resenas{grid-template-columns:repeat(3,1fr)}}
+.res{background:var(--carta);border:1px solid var(--marco);border-radius:16px;padding:15px}
+.res .estrellas{color:var(--acento);font-size:14px;letter-spacing:.1em;margin-bottom:6px}
+.res p{font-size:14.5px}
+.res small{display:block;margin-top:8px;color:var(--suave);font-size:12.5px}
+
+.pie{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding:24px 0 30px;
+  font-size:13.5px;color:var(--suave)}
+.qr{width:98px;height:98px;flex:none;border-radius:14px;background:var(--marco);
+  color:var(--marcotxt);display:grid;place-items:center;font-size:10px;text-align:center;padding:8px}
+
+.vitrina{background:var(--tinta);color:var(--carta);padding:36px 0 40px;margin-top:8px}
+.vitrina .rotulo{color:var(--pastel)}
+.vitrina h2{color:var(--carta);font-size:26px;max-width:21ch;margin-bottom:10px}
+.vitrina p{color:var(--pastel);font-size:15.5px;max-width:48ch;opacity:.86}
+.vitrina ul{list-style:none;margin:16px 0 20px;display:grid;gap:7px}
+.vitrina li{font-size:15px;color:var(--pastel);padding-left:22px;position:relative;opacity:.92}
+.vitrina li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;
+  border-radius:50%;background:var(--acento)}
+.vitrina .cta{display:inline-block;background:var(--carta);color:var(--tinta);
+  text-decoration:none;border-radius:12px;padding:14px 22px;font-weight:700;font-size:15.5px}
+.vitrina .fino{font-size:13px;color:var(--pastel);opacity:.7;margin-top:13px}
+
+.fija{position:fixed;left:0;right:0;bottom:0;background:var(--carta);
+  border-top:1px solid var(--marco);padding:10px 18px;z-index:30}
+.fija a{display:block;max-width:var(--max);margin:0 auto;text-align:center;text-decoration:none;
+  background:var(--acento);color:var(--carta);border-radius:12px;padding:13px;font-weight:700;font-size:15.5px}
+:focus-visible{outline:3px solid var(--acento);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="rotulo">Consultorio odontológico</div>
+  <h1>Dental El Roble</h1>
+  <p class="oficio">Odontología general y estética para toda la familia. Urgencias el mismo día.</p>
+  <div class="chips"><span class="chip">Atendiendo desde 2014</span><span class="chip">4,9 en Google</span><span class="chip">Urgencias el mismo día</span></div>
+</div></header>
+
+<section class="seccion"><div class="wrap">
+  <div class="rotulo">Síganos</div>
+  <h2>Nuestras redes</h2>
+  <p class="apoyo">Lo que publicamos allá queda recogido aquí. Un solo enlace para todo.</p>
+  <div class="redes"><a class="red" href="#" target="_blank" rel="noopener"><b>TikTok</b><small>@dentalelroble</small></a><a class="red" href="#" target="_blank" rel="noopener"><b>Instagram</b><small>@dentalelroble</small></a><a class="red" href="#" target="_blank" rel="noopener"><b>Facebook</b><small>Dental El Roble</small></a><a class="red" href="#" target="_blank" rel="noopener"><b>YouTube</b><small>Cuidado en casa</small></a><a class="red" href="#" target="_blank" rel="noopener"><b>Google</b><small>Ficha y reseñas</small></a></div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="rotulo">Lo último que publicamos</div>
+  <h2>Lo que publicamos</h2>
+  <div class="feed">
+    <div class="clip">TIKTOK<br>último video</div>
+    <div class="clip">INSTAGRAM<br>último reel</div>
+    <div class="clip">FACEBOOK<br>última publicación</div>
+    <div class="clip">YOUTUBE<br>último video</div>
+  </div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="rotulo">Consultorio</div>
+  <h2>Tratamientos</h2>
+  <div class="serv"><div class="fila"><div><h3>Valoración y plan de tratamiento</h3><p>Revisión completa, radiografía si se necesita, y el costo de todo por escrito antes de empezar.</p></div><div class="val">$50.000</div></div>
+    <a class="mini" data-ev="valoracion" href="https://wa.me/573001234567?text=Buenas%2C%20quiero%20agendar%20una%20valoraci%C3%B3n" target="_blank" rel="noopener">Pedir cita</a></div>
+  <div class="serv"><div class="fila"><div><h3>Limpieza y profilaxis</h3><p>Retiro de placa y cálculo, pulido y aplicación de flúor. Se recomienda cada seis meses.</p></div><div class="val">$120.000</div></div>
+    <a class="mini" data-ev="limpieza" href="https://wa.me/573001234567?text=Buenas%2C%20quiero%20agendar%20una%20limpieza%20dental" target="_blank" rel="noopener">Agendar limpieza</a></div>
+  <div class="serv"><div class="fila"><div><h3>Resinas y calzas</h3><p>Resina del color del diente, en una sola cita. El precio depende del tamaño de la cavidad.</p></div><div class="val">desde $150.000</div></div>
+    <a class="mini" data-ev="resinas" href="https://wa.me/573001234567?text=Buenas%2C%20necesito%20una%20resina%20o%20calza" target="_blank" rel="noopener">Consultar</a></div>
+  <div class="serv"><div class="fila"><div><h3>Ortodoncia</h3><p>Brackets metálicos o estéticos. Valoración, plan y control mensual. Se puede pagar por cuotas.</p></div><div class="val">desde $2.500.000</div></div>
+    <a class="mini" data-ev="ortodoncia" href="https://wa.me/573001234567?text=Buenas%2C%20quiero%20informaci%C3%B3n%20sobre%20ortodoncia" target="_blank" rel="noopener">Preguntar por ortodoncia</a></div>
+  <div class="serv"><div class="fila"><div><h3>Blanqueamiento</h3><p>En consultorio, en una sesión, con control de sensibilidad. Incluye valoración previa.</p></div><div class="val">$450.000</div></div>
+    <a class="mini" data-ev="blanqueamiento" href="https://wa.me/573001234567?text=Buenas%2C%20quiero%20informaci%C3%B3n%20sobre%20blanqueamiento" target="_blank" rel="noopener">Consultar</a></div>
+  <div class="serv"><div class="fila"><div><h3>Urgencias</h3><p>Dolor, fractura o corona suelta. Escríbanos y buscamos el espacio del mismo día.</p></div><div class="val">según el caso</div></div>
+    <a class="mini" data-ev="urgencia" href="https://wa.me/573001234567?text=Buenas%2C%20tengo%20una%20urgencia%20odontol%C3%B3gica" target="_blank" rel="noopener">Escribir ahora</a></div>
+  
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="rotulo">Quién atiende</div>
+  <h2>La misma cara, siempre</h2>
+  <div class="caja">
+    <div class="retrato">FOTO 1:1<br>odontóloga</div>
+    <h3>Dra. Carolina Vélez — odontóloga</h3>
+    <p>Registro profesional vigente. Atiende personalmente cada valoración y explica el plan de tratamiento con el costo antes de empezar.</p>
+  </div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="rotulo">Cómo llegar</div>
+  <h2>Dónde estamos</h2>
+  <div class="dos">
+    <div class="caja">
+      <h3>Dirección y horario</h3>
+      <ul>
+        <li>Calle 00 # 00 – 00, consultorio 000</li>
+        <li>Lunes a viernes, 8:00 a. m. a 6:00 p. m.</li>
+        <li>Sábados, 8:00 a. m. a 1:00 p. m.</li>
+      </ul>
+      <div class="mapas">
+        <a class="mapa" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a>
+        <a class="mapa" href="#" target="_blank" rel="noopener">Abrir en Waze</a>
+      </div>
+    </div>
+    <div class="caja">
+      <h3>Medios de pago</h3>
+      <ul><li>Efectivo, tarjeta débito y crédito</li><li>Nequi, Daviplata y transferencia</li><li>Plan de pagos por cuotas para tratamientos largos</li><li>Atendemos particulares y planes complementarios</li></ul>
+    </div>
+  </div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="rotulo">Antes de escribir</div>
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq"><details open><summary>¿Atienden urgencias sin cita?</summary><p>Sí. Escríbanos por WhatsApp contando qué le pasa y buscamos el espacio del mismo día. Si es fuera del horario, le indicamos a dónde ir.</p></details><details><summary>¿Cuánto cuesta el tratamiento completo?</summary><p>Depende de lo que encuentre la valoración. Después de revisarlo le entregamos el plan con el costo total por escrito, y usted decide.</p></details><details><summary>¿Se puede pagar por cuotas?</summary><p>Sí, para tratamientos largos como ortodoncia y rehabilitación. Se acuerda la cuota mensual al firmar el plan.</p></details><details><summary>¿Atienden niños?</summary><p>Sí, desde los tres años. La primera cita es corta y solo de reconocimiento, para que el niño no le coja miedo al consultorio.</p></details><details><summary>¿Trabajan con EPS o prepagada?</summary><p>Atendemos particulares y algunos planes complementarios. Escríbanos con el nombre de su plan y le confirmamos.</p></details><details><summary>¿Duele la limpieza?</summary><p>No suele doler. Si tiene las encías inflamadas puede sentir molestia, y en ese caso usamos anestesia tópica.</p></details></div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="rotulo">Lo que dicen</div>
+  <h2>Reseñas en Google</h2>
+  <div class="resenas"><div class="res"><div class="estrellas">★★★★★</div><p>Me explicaron el plan completo con precios antes de tocarme un diente. Eso lo agradezco.</p><small>Diego S.</small></div><div class="res"><div class="estrellas">★★★★★</div><p>Llegué un sábado con un dolor tremendo y me atendieron de una. Salí sin dolor.</p><small>Paula C.</small></div><div class="res"><div class="estrellas">★★★★★</div><p>Llevo a los dos niños desde hace tres años y ya ni se quejan de venir.</p><small>Marta L.</small></div></div>
+</div></section>
+
+<div class="wrap pie">
+  <div class="qr">CÓDIGO QR<br>de esta página</div>
+  <div>Imprima este código para la vitrina y el mostrador. Quien lo escanee llega directo a esta página, a las redes y al WhatsApp.</div>
+</div>
+
+<section class="vitrina" id="suya"><div class="wrap">
+  <div class="rotulo">Esta es una página modelo</div>
+  <h2>Le hacemos la suya con el nombre y las fotos de su negocio</h2>
+  <p>Lo que acaba de recorrer es la estructura completa, con contenido de muestra. La personalizamos según lo que su consultorio necesite: sus servicios, sus precios, su horario, su dirección y su WhatsApp. Queda lista en pocos días.</p>
+  <ul>
+    <li>Su ficha de Google, sus redes y su WhatsApp en un solo lugar</li>
+    <li>Un botón por servicio, con el mensaje ya escrito</li>
+    <li>Código QR para pegar en la vitrina y en el mostrador</li>
+    <li>Se hace una vez y no hay que mantenerla</li>
+  </ul>
+  <a class="cta" data-ev="lead_vitrina" href="https://wa.me/573192493401?text=Buenas%2C%20vi%20la%20demo%20de%20Dental%20El%20Roble%20y%20quiero%20la%20m%C3%ADa" target="_blank" rel="noopener">Quiero la mía</a>
+  <p class="fino"><a href="https://vitrina.com.co/" style="color:inherit">Ver los demás ejemplos en vitrina.com.co</a></p>
+</div></section>
+
+<div class="fija"><a href="https://wa.me/573001234567?text=Buenas%2C%20quiero%20pedir%20una%20cita" target="_blank" rel="noopener">Escribir por WhatsApp</a></div>
+
+</body>
+</html>
