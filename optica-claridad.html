@@ -66,8 +66,12 @@ a{color:inherit}
 
 .feed{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
 @media(min-width:620px){.feed{grid-template-columns:repeat(4,1fr)}}
-.clip{aspect-ratio:9/16;background:var(--marco);color:var(--marcotxt);border-radius:13px;
-  display:grid;place-items:center;text-align:center;font-size:10.5px;padding:8px;letter-spacing:.05em}
+.clip{aspect-ratio:4/5;background:var(--marco);color:var(--marcotxt);border-radius:13px;
+  display:grid;place-items:center;text-align:center;font-size:10.5px;padding:8px;
+  letter-spacing:.05em;position:relative;overflow:hidden}
+.clip img{width:100%;height:100%;object-fit:cover;display:block}
+.clip span{position:absolute;left:8px;bottom:8px;background:rgba(20,20,20,.6);color:#fff;
+  font-size:11px;font-weight:600;padding:4px 9px;border-radius:8px;letter-spacing:.04em}
 
 .serv{background:var(--carta);border:1px solid var(--marco);border-radius:var(--r);
   padding:16px 17px;margin-bottom:10px}
@@ -154,7 +158,7 @@ a{color:inherit}
   <div class="rotulo">Lo último que publicamos</div>
   <h2>Monturas de la semana</h2>
   <div class="feed">
-    <div class="clip">TIKTOK<br>último video</div>
+    <div class="clip"><img src="foto-optica-gafas.webp" alt="Montura de acetato sobre mesa de madera" loading="lazy"><span>TikTok</span></div>
     <div class="clip">INSTAGRAM<br>último reel</div>
     <div class="clip">FACEBOOK<br>última publicación</div>
     <div class="clip">YOUTUBE<br>último video</div>
