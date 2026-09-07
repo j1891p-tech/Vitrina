@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!-- Vitrina · cotizador. Cuatro preguntas y un solo valor.
+     No hay menú de precios sueltos a propósito: un desglose le entrega la
+     estructura al competidor y le enseña al cliente a comprar por renglones. -->
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cotice su vitrina — Vitrina</title>
+<meta name="description" content="Cuatro preguntas y sabe cuánto vale. Sin dejar datos: el resumen le llega escrito a su WhatsApp.">
+<link rel="canonical" href="https://vitrina.com.co/cotizador.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--papel:#F4F1EA;--tinta:#26231E;--suave:#6A6355;--acento:#9A5B3F;
+  --pastel:#E8E2D5;--marco:#D6CEBD;--carta:#FCFAF5;--max:900px;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--papel);color:var(--tinta);font-family:'Public Sans',system-ui,sans-serif;
+  font-size:16.5px;line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:128px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;line-height:1.14}
+.rotulo{font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--acento);
+  font-weight:700;margin-bottom:6px}
+header{padding:34px 0 4px}
+h1{font-size:clamp(31px,8vw,44px);margin-bottom:10px}
+.apoyo{color:var(--suave);max-width:56ch}
+.paso{padding:26px 0 4px}
+.paso h2{font-size:23px;margin-bottom:3px}
+.paso .sub{color:var(--suave);font-size:14.5px;margin-bottom:13px}
+
+.rejilla{display:grid;gap:9px;grid-template-columns:1fr 1fr}
+@media(min-width:660px){.rejilla{grid-template-columns:repeat(3,1fr)}}
+.rejilla.dos{grid-template-columns:1fr}
+@media(min-width:660px){.rejilla.dos{grid-template-columns:repeat(2,1fr)}}
+.op{background:var(--carta);border:1px solid var(--marco);border-radius:14px;padding:13px 14px;
+  cursor:pointer;font-size:14.5px;display:block}
+.op:has(input:checked){border-color:var(--acento);box-shadow:inset 0 0 0 1px var(--acento)}
+.op input{position:absolute;opacity:0;pointer-events:none}
+.op b{display:block;font-size:15px;font-weight:600}
+.op small{color:var(--suave);font-size:13px;display:block;margin-top:2px}
+
+#resumen{background:var(--carta);border:1px solid var(--marco);border-radius:var(--r);
+  padding:20px;margin-top:16px}
+#resumen h3{font-size:21px;margin-bottom:4px}
+#resumen .lead{color:var(--suave);font-size:14.5px;margin-bottom:12px}
+#resumen ul{list-style:none}
+#resumen li{font-size:14.5px;padding:5px 0 5px 19px;position:relative}
+#resumen li::before{content:"";position:absolute;left:0;top:.78em;width:6px;height:6px;
+  border-radius:50%;background:var(--acento)}
+
+.nota{background:var(--pastel);border-radius:14px;padding:14px 16px;margin-top:14px;font-size:14.5px}
+.nota b{color:var(--acento)}
+
+.total{position:fixed;left:0;right:0;bottom:0;background:var(--carta);
+  border-top:1px solid var(--marco);padding:12px 18px 14px;z-index:40}
+.total .wrap{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.cifras{display:flex;gap:24px;flex-wrap:wrap}
+.cifra small{display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--suave);font-weight:700}
+.cifra strong{font-family:'Instrument Serif',serif;font-weight:400;font-size:27px;line-height:1.1}
+.enviar{display:inline-flex;gap:9px;align-items:center;background:var(--acento);color:var(--carta);
+  border-radius:13px;padding:14px 22px;font-weight:700;font-size:15.5px;border:0;cursor:pointer;
+  font-family:inherit}
+:focus-visible{outline:3px solid var(--acento);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <div class="rotulo">Cotizador</div>
+  <h1>Cuatro preguntas y sabe cuánto vale</h1>
+  <p class="apoyo">No le pedimos ningún dato. El valor sale aquí mismo y el resumen le llega escrito a su WhatsApp, listo para enviar.</p>
+</div></header>
+
+<section class="paso"><div class="wrap">
+  <div class="rotulo">1</div>
+  <h2>¿Qué negocio tiene?</h2>
+  <div class="sub">Para saber qué necesita su tipo de cliente.</div>
+  <div class="rejilla" id="giros"></div>
+</div></section>
+
+<section class="paso"><div class="wrap">
+  <div class="rotulo">2</div>
+  <h2>¿Cuánto va a mostrar?</h2>
+  <div class="sub">Productos, servicios, habitaciones, inmuebles o ejemplares.</div>
+  <div class="rejilla" id="tamano"></div>
+</div></section>
+
+<section class="paso"><div class="wrap">
+  <div class="rotulo">3</div>
+  <h2>¿Qué necesita que pase?</h2>
+  <div class="sub">El segundo incluye el primero.</div>
+  <div class="rejilla dos" id="alcance"></div>
+</div></section>
+
+<section class="paso"><div class="wrap">
+  <div class="rotulo">4</div>
+  <h2>¿Tiene dominio propio?</h2>
+  <div class="sub">La dirección de internet de su negocio. Puede empezar sin uno y ponerlo después.</div>
+  <div class="rejilla dos" id="dom"></div>
+</div></section>
+
+<section class="paso"><div class="wrap">
+  <div class="rotulo">5</div>
+  <h2>¿Cada cuánto quiere cambiarle cosas?</h2>
+  <div class="sub">Usted manda lo que cambió y nosotros lo montamos. Sin contrato ni permanencia, y el mes que no mande nada, no se cobra.</div>
+  <div class="rejilla" id="plan"></div>
+</div></section>
+
+<section class="paso"><div class="wrap">
+  <div id="resumen"></div>
+  <div class="nota">
+    <b>Va incluido este mes.</b> El reel vertical de su página, las piezas para Facebook e Instagram y la guía de publicación.
+  </div>
+  <div class="nota">
+    <b>Qué es una sección de trabajo.</b> Un envío suyo con lo que haya cambiado: fotos, precios, disponibilidad, números y enlaces. No importa si manda una cosa o seis, importa que llegue junto. Lo que no entra son los títulos y las descripciones de sus servicios: no por costo, sino porque son los que Google ya leyó, y reescribirlos cada mes hace que el negocio empiece de cero cada mes. Eso se revisa una vez al año o cuando el negocio cambie de verdad. Y si necesita una sección que no existe, eso es desarrollo y se cotiza aparte.
+  </div>
+  <div class="nota" id="aviso-dominio" hidden>
+    <b>El dominio no está incluido en el valor de arriba.</b> Se lo conseguimos y se lo dejamos conectado, pero lo que cuesta el dominio se le paga al registrador tal como es, sin margen nuestro. Son unos $60.000 al año para un punto com, y en el registrador que usamos ese precio no sube en la renovación.
+  </div>
+  <div class="nota" id="aviso-otro" hidden>
+    <b>Su negocio no está en la lista.</b> El valor de arriba es la referencia de una página completa. Escríbanos y lo ajustamos a lo que usted hace: puede quedar en menos.
+  </div>
+  <div class="nota">
+    <b>Los videos no se guardan en la página.</b> Se traen de su canal de YouTube o TikTok. Así la página abre en segundos aunque el video sea largo, y las vistas se le quedan a su canal.
+  </div>
+  <div class="nota">
+    <b>Si su negocio necesita más.</b> Cuando cada servicio necesita su propia sección, con menú: <a href="sitio-corporativo.html" style="color:var(--acento)">sitio con varias secciones</a>. Cuando hay que cobrar en línea, con carrito y pasarela: <a href="tienda-en-linea.html" style="color:var(--acento)">tienda</a>. Y si necesita algo hecho para su forma de trabajar, escríbanos y lo hablamos.
+  </div>
+</div></section>
+
+<div class="total"><div class="wrap">
+  <div class="cifras">
+    <div class="cifra"><small>Pago único</small><strong id="unico">—</strong></div>
+    <div class="cifra"><small>Cada mes</small><strong id="mensual">—</strong></div>
+  </div>
+  <button class="enviar" id="enviar" type="button">Enviar mi cotización por WhatsApp</button>
+</div></div>
+
+<script>
+(function(){
+  var WA = "573192493401";
+
+  // Cada giro arranca donde le sirve. No se cobra por ser criadero: se cobra
+  // porque un criadero necesita catálogo largo y solicitud de visita, y un
+  // consultorio no. El cliente puede cambiarlo después.
+  var GIROS = [
+    {n:"Consultorio o clínica",      tam:"t1", alc:"a1"},
+    {n:"Óptica",                     tam:"t1", alc:"a1"},
+    {n:"Veterinaria",                tam:"t1", alc:"a1"},
+    {n:"Taller o servicio técnico",  tam:"t1", alc:"a1"},
+    {n:"Hotel, finca o glamping",    tam:"t1", alc:"a2"},
+    {n:"Salón o finca de eventos",   tam:"t1", alc:"a2"},
+    {n:"Criadero o ganadería",       tam:"t2", alc:"a2"},
+    {n:"Inmobiliaria",               tam:"t2", alc:"a2"},
+    {n:"Marca que vende por redes",  tam:"t2", alc:"a2"},
+    {n:"Otro",                       tam:"t1", alc:"a1"}
+  ];
+
+  var TAMANO = [
+    {id:"t1", n:"Hasta 12",  d:"Lo usual en un consultorio o un hotel", v:0,      fichas:12},
+    {id:"t2", n:"Hasta 30",  d:"Catálogos largos",                      v:90000,  fichas:30},
+    {id:"t3", n:"Más de 30", d:"Se revisa con usted",                   v:180000, fichas:60}
+  ];
+
+  // cada nivel incluye el anterior: no se venden piezas sueltas
+  var ALCANCE = [
+    {id:"a1", n:"Que lo encuentren y le escriban", v:0,
+     d:"Sus redes al frente, su ficha de Google conectada y un WhatsApp por cada cosa que ofrece.",
+     items:["Sus cinco redes arriba, en la primera pantalla: TikTok, Instagram, Facebook, "
+            + "YouTube y Google. No escondidas al final",
+            "Un espacio por red para lo último que publicó, con el enlace a cada perfil",
+            "Su ficha de Google, creada o puesta al día, y conectada a la página",
+            "Lo que ofrece, con precio o condiciones, y quién atiende",
+            "Cómo llegar, horario y los medios de pago que recibe",
+            "Las reseñas de Google a la vista, y el botón que le pide la reseña al cliente",
+            "Un botón de WhatsApp por cada servicio o producto, con el mensaje ya escrito",
+            "Código QR de su página, para el mostrador y la vitrina",
+            "La página queda con la información que Google necesita para entenderla: "
+            + "título propio, descripción y los datos de su negocio",
+            "Medición conectada: cuántos entraron y cuántos tocaron el WhatsApp"]},
+    {id:"a2", n:"Que además pidan, reserven o agenden", v:150000,
+     d:"Una solicitud que arma sola el mensaje con la fecha, la cantidad o la cita, y le llega lista al WhatsApp.",
+     items:["Solicitud de cita, fecha o pedido con los datos ya escritos",
+            "El pedido llega sumado y completo, no en pedazos",
+            "Sus videos traídos desde su canal de YouTube o TikTok, mostrados por ítem",
+            "Credenciales, registros y afiliaciones a la vista, cuando el negocio los tiene"]}
+  ];
+
+  var PLANES = [
+    {id:"p0", n:"No por ahora", v:0,     d:"Usted verá después"},
+    {id:"p1", n:"Una sección al mes", v:50000,  d:"Cambia poco"},
+    {id:"p2", n:"Dos al mes", v:90000,  d:"Cambia seguido"},
+    {id:"p4", n:"Una por semana", v:150000, d:"Precios o surtido que se mueven"}
+  ];
+
+  // El dominio no se cobra: se conecta. Si lo conseguimos nosotros, el cliente
+  // le paga al registrador lo que cuesta, sin margen encima.
+  var DOMINIO = [
+    {id:"d0", n:"Ya lo tengo o lo compro yo", v:0,
+     d:"Lo conectamos y dejamos el certificado andando, sin costo"},
+    {id:"d1", n:"Que lo consigan ustedes", v:0,
+     d:"Al costo del registrador. No entra en este valor"}
+  ];
+
+  var BASE = 590000;
+  var pesos = function(n){ return "$" + n.toLocaleString("es-CO"); };
+
+  function pinta(cont, nombre, lista, marcado){
+    document.getElementById(cont).innerHTML = lista.map(function(o, i){
+      var val = o.id || o.n;
+      var tit = o.n;
+      var sub = o.d ? '<small>' + o.d + '</small>' : '';
+      return '<label class="op"><input type="radio" name="' + nombre + '" value="' + val +
+        '"' + (i === marcado ? " checked" : "") + '><b>' + tit + '</b>' + sub + '</label>';
+    }).join("");
+  }
+
+  pinta("giros", "giro", GIROS, -1);
+  pinta("tamano", "tam", TAMANO, 0);
+  pinta("alcance", "alc", ALCANCE, 0);
+  pinta("dom", "dom", DOMINIO, 0);
+  pinta("plan", "plan", PLANES, 0);
+
+  // al escoger giro se mueve el punto de partida, una sola vez por escogencia
+  document.getElementById("giros").addEventListener("change", function(ev){
+    var g = null;
+    for (var i = 0; i < GIROS.length; i++) {
+      if (GIROS[i].n === ev.target.value) g = GIROS[i];
+    }
+    if (!g) return;
+    marcar("tam", g.tam); marcar("alc", g.alc);
+    document.getElementById("aviso-otro").hidden = (g.n !== "Otro");
+    calcular();
+  });
+
+  function marcar(nombre, valor){
+    var i = document.querySelector('input[name="' + nombre + '"][value="' + valor + '"]');
+    if (i) i.checked = true;
+  }
+
+  function elegido(nombre, lista){
+    var v = document.querySelector('input[name="' + nombre + '"]:checked');
+    if (!v) return null;
+    for (var i = 0; i < lista.length; i++) {
+      if ((lista[i].id || lista[i].n) === v.value) return lista[i];
+    }
+    return null;
+  }
+
+  function calcular(){
+    var t = elegido("tam", TAMANO), a = elegido("alc", ALCANCE), p = elegido("plan", PLANES);
+    var dm = elegido("dom", DOMINIO);
+    var giro = document.querySelector('input[name="giro"]:checked');
+
+    // el alcance es acumulativo: se suma este y todos los anteriores
+    var suma = 0, incluye = [];
+    for (var i = 0; i < ALCANCE.length; i++) {
+      suma += ALCANCE[i].v;
+      incluye = incluye.concat(ALCANCE[i].items);
+      if (ALCANCE[i].id === a.id) break;
+    }
+    var unico = BASE + t.v + suma + dm.v;
+
+    // el recargo mensual depende del tamaño del catálogo
+    var recargo = 0;
+    var mensual = p.v ? p.v + recargo : 0;
+
+    var av = document.getElementById("aviso-dominio");
+    if (av) av.hidden = (dm.id !== "d1");
+
+    document.getElementById("unico").textContent = pesos(unico);
+    document.getElementById("mensual").textContent = mensual ? pesos(mensual) : "$0";
+
+    document.getElementById("resumen").innerHTML =
+      '<h3>' + pesos(unico) + (mensual ? ' <span style="font-size:16px;color:var(--suave)">'
+        + 'y ' + pesos(mensual) + ' al mes</span>' : '') + '</h3>' +
+      '<p class="lead">Montaje ' + pesos(BASE) +
+      (unico > BASE ? ', más ' + pesos(unico - BASE) + ' de lo que agregó' : '') +
+      '. Mitad al empezar y mitad al entregar. ' +
+      (mensual ? 'La actualización se factura mes vencido y se puede parar cuando quiera.'
+               : 'Sin cuota mensual.') + '</p>' +
+      '<ul>' + incluye.map(function(x){ return '<li>' + x + '</li>'; }).join("") + '</ul>';
+
+    return {giro: giro ? giro.value : null, t: t, a: a, p: p, dm: dm,
+            unico: unico, mensual: mensual, recargo: recargo};
+  }
+
+  function mensaje(r){
+    var t = "Buenas. Armé mi cotización en la página:\n\n";
+    if (r.giro) t += "Negocio: " + r.giro + "\n";
+    t += "Muestro: " + r.t.n.toLowerCase() + "\n";
+    t += "Necesito: " + r.a.n.toLowerCase() + "\n";
+    t += "Dominio: " + r.dm.n.toLowerCase() + "\n\n";
+    t += "Pago único: " + pesos(r.unico) + "\n";
+    t += r.mensual
+      ? "Actualización " + r.p.n.toLowerCase() + ": " + pesos(r.mensual) + "\n"
+      : "Sin plan mensual por ahora\n";
+    t += "\nQuiero que me cuenten cómo seguimos.";
+    return t;
+  }
+
+  document.addEventListener("change", calcular);
+  document.getElementById("enviar").addEventListener("click", function(){
+    var r = calcular();
+    window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(mensaje(r)), "_blank");
+  });
+  calcular();
+})();
+</script>
+
+</body>
+</html>
