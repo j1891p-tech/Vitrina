@@ -801,6 +801,18 @@ var MEDICION_GA = "G-RM3X2S880D";     // Vitrina · vitrina.com.co
 
   function estaAbierto(){ return visor.classList.contains('abierto'); }
 
+  /* La direccion refleja la demo abierta. Se usa replaceState y no pushState:
+     no agrega entradas al historial, no dispara hashchange, y por eso no se
+     repite el enredo del boton de volver que ya se habia intentado tres veces.
+     Lo que se gana es que F5 no saque al visitante y que el enlace se pueda
+     compartir. El boton de atras sigue comportandose igual que antes. */
+  function marcar(url){
+    try { history.replaceState(null, '', '#demo=' + url.replace(/\.html$/, '')); } catch (e) {}
+  }
+  function desmarcar(){
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+  }
+
   function abrir(url, nombre){
     if (!estaAbierto()) { foco = document.activeElement; alturaAntes = window.scrollY; }
     cual.innerHTML = 'Está viendo <b>' + nombre + '</b>';
@@ -825,6 +837,7 @@ var MEDICION_GA = "G-RM3X2S880D";     // Vitrina · vitrina.com.co
       marco.src = url;
     }
 
+    marcar(url);
     visor.classList.add('abierto');
     document.body.classList.add('vt-quieto');
     document.getElementById('vt-volver').focus();
@@ -832,6 +845,7 @@ var MEDICION_GA = "G-RM3X2S880D";     // Vitrina · vitrina.com.co
   }
 
   function ocultar(){
+    desmarcar();
     visor.classList.remove('abierto');
     document.body.classList.remove('vt-quieto');
     marco.removeAttribute('src');
