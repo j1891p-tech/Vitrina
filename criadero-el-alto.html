@@ -117,6 +117,24 @@ padding:10px 17px;font-size:14.5px;font-weight:500}
 .caja h3{font-size:19px;margin-bottom:7px}
 .caja p{font-size:14.5px;color:var(--suave)}
 .caja .precio{color:var(--acento);font-weight:600;margin-top:9px;font-size:15.5px}
+.form{background:var(--carta);border:1px solid var(--marco);border-radius:var(--r);padding:20px}
+.form label{display:block;font-size:12px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--suave);margin-bottom:5px}
+.campo{width:100%;background:var(--papel);border:1px solid var(--marco);border-radius:10px;
+  padding:11px 13px;font-family:inherit;font-size:16.5px;color:var(--tinta);margin-bottom:15px}
+.campo:focus{outline:0;border-color:var(--acento)}
+.par{display:grid;gap:0 16px;grid-template-columns:1fr}
+@media(min-width:520px){.par{grid-template-columns:1fr 1fr}}
+.cuenta{background:var(--pastel);border-radius:11px;padding:14px 16px;margin-bottom:15px}
+.cuenta .renglon{display:flex;justify-content:space-between;font-size:14.5px;color:var(--suave);padding:2px 0}
+.cuenta .total{display:flex;justify-content:space-between;align-items:baseline;
+  border-top:1px solid var(--marco);margin-top:8px;padding-top:8px}
+.cuenta .total span{font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--suave)}
+.cuenta .total b{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:25px;line-height:1.1}
+.alerta{background:#EFE1CB;color:#6B4E1E;border-radius:10px;padding:10px 13px;font-size:13.5px;margin:-6px 0 15px}
+.boton{display:block;width:100%;background:var(--acento);color:var(--carta);border:0;border-radius:11px;
+  padding:14px;font-family:inherit;font-weight:600;font-size:16px;cursor:pointer}
+.pie-form{font-size:13.5px;color:var(--suave);margin-top:11px}
 
 .datos{background:var(--carta);border:1px solid var(--marco);border-radius:var(--r);padding:5px 19px}
 .dato{display:flex;justify-content:space-between;gap:16px;padding:12px 0;
@@ -346,6 +364,48 @@ transition:opacity .2s ease,transform .2s ease;z-index:30}
 </div></section>
 
 <section class="seccion"><div class="wrap">
+  <div class="rotulo">Pensión</div>
+  <h2>Calcule lo que le costaría</h2>
+  <p class="apoyo">Sobre la tarifa base de $1.400.000 al mes por ejemplar. El transporte a ferias y el veterinario se cotizan aparte.</p>
+  <div class="form">
+    <div class="par">
+      <div><label for="cant">Ejemplares</label><input class="campo" id="cant" type="number" min="1" max="12" value="1"></div>
+      <div><label for="meses">Meses</label><input class="campo" id="meses" type="number" min="1" max="24" value="3"></div>
+    </div>
+    <div class="alerta" id="alerta-cupo" hidden></div>
+    <div class="cuenta">
+      <div class="renglon"><span id="detalle-p">—</span></div>
+      <div class="total"><span>Estimado</span><b id="total-p">—</b></div>
+    </div>
+    <button class="boton" id="btn-pension" type="button">Pedir la propuesta por WhatsApp</button>
+    <p class="pie-form">Es un estimado sobre la tarifa base. El valor final depende del plan de trabajo que se acuerde para cada ejemplar.</p>
+  </div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
+  <div class="rotulo">Visitas</div>
+  <h2>Pida su cita</h2>
+  <p class="apoyo">Las visitas son con cita, de lunes a sábado. Puede venir con su veterinario o su entrenador.</p>
+  <div class="form">
+    <div class="par">
+      <div><label for="dia">Día</label><input class="campo" id="dia" type="date"></div>
+      <div><label for="hora">Hora</label><select class="campo" id="hora"></select></div>
+    </div>
+    <div class="alerta" id="alerta-dia" hidden></div>
+    <label for="motivo">Qué quiere ver</label>
+    <select class="campo" id="motivo">
+      <option>Ejemplares en venta</option>
+      <option>Servicio de monta</option>
+      <option>Pensión y entrenamiento</option>
+    </select>
+    <label for="quien">Nombre y teléfono</label>
+    <input class="campo" id="quien" type="text" placeholder="Su nombre y su número">
+    <button class="boton" id="btn-cita" type="button">Enviar la solicitud por WhatsApp</button>
+    <p class="pie-form">La solicitud llega al WhatsApp del criadero con los datos ya escritos. La cita queda en firme cuando el criadero la confirme.</p>
+  </div>
+</div></section>
+
+<section class="seccion"><div class="wrap">
   <div class="rotulo">Cómo llegar</div>
   <h2>Dónde queda</h2>
   <div class="datos">
@@ -429,6 +489,78 @@ var MEDICION_GA = "";     // ej: "G-XXXXXXX"
     window.gtag=function(){dataLayer.push(arguments)};
     gtag('js', new Date()); gtag('config', MEDICION_GA);
   }
+
+  // --- Calculadora de pension y solicitud de cita ---
+  var TARIFA = 1400000, PESEBRERAS = 8;
+  var pesos = function(n){ return '$' + n.toLocaleString('es-CO'); };
+
+  var CANT=document.getElementById('cant'), MESES=document.getElementById('meses'),
+      DETP=document.getElementById('detalle-p'), TOTP=document.getElementById('total-p'),
+      ALCUPO=document.getElementById('alerta-cupo');
+
+  function calcularPension(){
+    var c = Math.max(1, +CANT.value||1), m = Math.max(1, +MESES.value||1);
+    ALCUPO.hidden = c <= PESEBRERAS;
+    ALCUPO.textContent = 'Hay ' + PESEBRERAS + ' pesebreras disponibles. Escr\u00edbanos y miramos c\u00f3mo organizar el resto.';
+    DETP.textContent = c + (c===1?' ejemplar':' ejemplares') + ' \u00d7 ' + m + (m===1?' mes':' meses') + ' \u00d7 ' + pesos(TARIFA);
+    TOTP.textContent = pesos(c*m*TARIFA);
+    return {c:c, m:m, total:c*m*TARIFA};
+  }
+  [CANT,MESES].forEach(function(el){
+    el.addEventListener('input', calcularPension);
+    el.addEventListener('change', calcularPension);
+  });
+  calcularPension();
+
+  document.getElementById('btn-pension').addEventListener('click', function(){
+    var r = calcularPension();
+    var t = 'Buenas, calcul\u00e9 la pensi\u00f3n en la p\u00e1gina.\n'
+          + 'Ejemplares: ' + r.c + '\nMeses: ' + r.m
+          + '\nEstimado: ' + pesos(r.total)
+          + '\n\nQuiero que me cuenten c\u00f3mo seguimos.';
+    window.open('https://wa.me/573001234567?text=' + encodeURIComponent(t), '_blank');
+  });
+
+  // El criadero atiende de lunes a sabado, de 7 a.m. a 4 p.m.: el formulario
+  // no deja escoger un domingo ni una hora en que no hay nadie en pista.
+  var DIA=document.getElementById('dia'), HORA=document.getElementById('hora'),
+      ALDIA=document.getElementById('alerta-dia');
+  var ABRE=7, CIERRA=16;
+  for(var i=ABRE;i<=CIERRA;i++){
+    var o=document.createElement('option');
+    var h12 = i%12===0 ? 12 : i%12;
+    o.value=(i<10?'0':'')+i+':00';
+    o.textContent=h12+':00 '+(i<12?'a.m.':'p.m.');
+    if(i===9) o.selected=true;
+    HORA.appendChild(o);
+  }
+
+  function iso(d){ return d.toISOString().slice(0,10); }
+  function proximoHabil(f){
+    var d=new Date(f+'T12:00:00');
+    while(d.getDay()===0) d.setDate(d.getDate()+1);   // 0 = domingo
+    return iso(d);
+  }
+  DIA.min = iso(new Date());
+  DIA.value = proximoHabil(DIA.min);
+
+  DIA.addEventListener('change', function(){
+    if(!DIA.value) return;
+    var d=new Date(DIA.value+'T12:00:00');
+    if(d.getDay()===0){
+      DIA.value = proximoHabil(DIA.value);
+      ALDIA.hidden=false;
+      ALDIA.textContent='Los domingos no hay visitas. Le movimos la fecha al lunes siguiente.';
+    } else { ALDIA.hidden=true; }
+  });
+
+  document.getElementById('btn-cita').addEventListener('click', function(){
+    var t = 'Buenas, quiero pedir una cita para visitar el criadero.\n'
+          + 'D\u00eda: ' + (DIA.value||'por definir') + '\nHora: ' + HORA.options[HORA.selectedIndex].textContent
+          + '\nQuiero ver: ' + document.getElementById('motivo').value
+          + '\nA nombre de: ' + (document.getElementById('quien').value||'');
+    window.open('https://wa.me/573001234567?text=' + encodeURIComponent(t), '_blank');
+  });
 
   var p = new URLSearchParams(location.search);
   var ref = p.get('utm_content') || p.get('utm_campaign') || p.get('ref') || '';

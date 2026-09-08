@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Vitrina · cotizador. Cuatro preguntas y un solo valor.
+<!-- Vitrina · cotizador. Cinco preguntas y un solo valor.
      No hay menú de precios sueltos a propósito: un desglose le entrega la
      estructura al competidor y le enseña al cliente a comprar por renglones. -->
 <html lang="es-CO">
@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cotice su vitrina — Vitrina</title>
-<meta name="description" content="Cuatro preguntas y sabe cuánto vale. Sin dejar datos: el resumen le llega escrito a su WhatsApp.">
+<meta name="description" content="Cinco preguntas y sabe cuánto vale. Sin dejar datos: el resumen le llega escrito a su WhatsApp.">
 <link rel="canonical" href="https://vitrina.com.co/cotizador.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,11 @@ body{background:var(--papel);color:var(--tinta);font-family:'Public Sans',system
 h1,h2,h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;line-height:1.14}
 .rotulo{font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--acento);
   font-weight:700;margin-bottom:6px}
-header{padding:34px 0 4px}
+header{padding:62px 0 4px}
+.volver{position:fixed;top:12px;left:12px;z-index:50;background:var(--carta);
+  border:1px solid var(--marco);border-radius:999px;padding:9px 16px;font-size:14px;
+  font-weight:600;color:var(--tinta);text-decoration:none;display:inline-flex;gap:7px;
+  align-items:center;box-shadow:0 1px 4px rgba(38,35,30,.08)}
 h1{font-size:clamp(31px,8vw,44px);margin-bottom:10px}
 .apoyo{color:var(--suave);max-width:56ch}
 .paso{padding:26px 0 4px}
@@ -48,9 +52,27 @@ h1{font-size:clamp(31px,8vw,44px);margin-bottom:10px}
 #resumen li{font-size:14.5px;padding:5px 0 5px 19px;position:relative}
 #resumen li::before{content:"";position:absolute;left:0;top:.78em;width:6px;height:6px;
   border-radius:50%;background:var(--acento)}
+#resumen .grupo{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--acento);font-weight:700;margin-bottom:2px}
 
 .nota{background:var(--pastel);border-radius:14px;padding:14px 16px;margin-top:14px;font-size:14.5px}
 .nota b{color:var(--acento)}
+
+.masc{display:grid;gap:9px;grid-template-columns:1fr;margin-top:10px}
+@media(min-width:660px){.masc{grid-template-columns:1fr 1fr}}
+.masc a{display:block;background:var(--carta);border:1px solid var(--marco);
+  border-radius:14px;padding:13px 14px;text-decoration:none;color:var(--tinta)}
+.masc b{display:block;font-size:15px;font-weight:600;color:var(--acento)}
+.masc small{color:var(--suave);font-size:13px;display:block;margin-top:2px}
+
+.faqtit{font-size:21px;margin:26px 0 4px}
+details.faq{background:var(--pastel);border-radius:14px;margin-top:9px;font-size:14.5px}
+details.faq>summary{padding:14px 16px;cursor:pointer;font-weight:600;color:var(--acento);
+  list-style:none;display:flex;justify-content:space-between;gap:12px}
+details.faq>summary::-webkit-details-marker{display:none}
+details.faq>summary::after{content:"+";font-weight:700}
+details.faq[open]>summary::after{content:"−"}
+details.faq .cuerpo{padding:0 16px 15px}
 
 .total{position:fixed;left:0;right:0;bottom:0;background:var(--carta);
   border-top:1px solid var(--marco);padding:12px 18px 14px;z-index:40}
@@ -68,9 +90,11 @@ h1{font-size:clamp(31px,8vw,44px);margin-bottom:10px}
 </head>
 <body>
 
+<a class="volver" href="https://vitrina.com.co/">&lsaquo; Volver</a>
+
 <header><div class="wrap">
   <div class="rotulo">Cotizador</div>
-  <h1>Cuatro preguntas y sabe cuánto vale</h1>
+  <h1>Cinco preguntas y sabe cuánto vale</h1>
   <p class="apoyo">No le pedimos ningún dato. El valor sale aquí mismo y el resumen le llega escrito a su WhatsApp, listo para enviar.</p>
 </div></header>
 
@@ -90,8 +114,8 @@ h1{font-size:clamp(31px,8vw,44px);margin-bottom:10px}
 
 <section class="paso"><div class="wrap">
   <div class="rotulo">3</div>
-  <h2>¿Qué necesita que pase?</h2>
-  <div class="sub">El segundo incluye el primero.</div>
+  <h2>¿Qué va a hacer su página?</h2>
+  <div class="sub">La segunda incluye todo lo de la primera.</div>
   <div class="rejilla dos" id="alcance"></div>
 </div></section>
 
@@ -104,7 +128,7 @@ h1{font-size:clamp(31px,8vw,44px);margin-bottom:10px}
 
 <section class="paso"><div class="wrap">
   <div class="rotulo">5</div>
-  <h2>¿Cada cuánto quiere cambiarle cosas?</h2>
+  <h2>¿Cada cuánto va a mandar cambios?</h2>
   <div class="sub">Usted manda lo que cambió y nosotros lo montamos. Sin contrato ni permanencia, y el mes que no mande nada, no se cobra.</div>
   <div class="rejilla" id="plan"></div>
 </div></section>
@@ -112,10 +136,10 @@ h1{font-size:clamp(31px,8vw,44px);margin-bottom:10px}
 <section class="paso"><div class="wrap">
   <div id="resumen"></div>
   <div class="nota">
-    <b>Va incluido este mes.</b> El reel vertical de su página, las piezas para Facebook e Instagram y la guía de publicación.
+    <b>Va incluido este mes.</b> Un reel de su negocio, hasta 12 piezas de imagen para Facebook o Instagram y la guía de publicación.
   </div>
-  <div class="nota">
-    <b>Qué es una sección de trabajo.</b> Un envío suyo con lo que haya cambiado: fotos, precios, disponibilidad, números y enlaces. No importa si manda una cosa o seis, importa que llegue junto. Lo que no entra son los títulos y las descripciones de sus servicios: no por costo, sino porque son los que Google ya leyó, y reescribirlos cada mes hace que el negocio empiece de cero cada mes. Eso se revisa una vez al año o cuando el negocio cambie de verdad. Y si necesita una sección que no existe, eso es desarrollo y se cotiza aparte.
+  <div class="nota" id="aviso-solicitud" hidden>
+    <b>Una solicitud no es una reserva confirmada.</b> El visitante llena los datos y el mensaje le llega a su WhatsApp. Quien confirma la cita, la fecha o el pedido es usted, respondiendo. La página no aparta cupos ni bloquea agenda. Y el QR de pago es el suyo, el que ya usa: la plata le llega directo a su cuenta. No es carrito ni pasarela — eso es la tienda.
   </div>
   <div class="nota" id="aviso-dominio" hidden>
     <b>El dominio no está incluido en el valor de arriba.</b> Se lo conseguimos y se lo dejamos conectado, pero lo que cuesta el dominio se le paga al registrador tal como es, sin margen nuestro. Son unos $60.000 al año para un punto com, y en el registrador que usamos ese precio no sube en la renovación.
@@ -123,12 +147,26 @@ h1{font-size:clamp(31px,8vw,44px);margin-bottom:10px}
   <div class="nota" id="aviso-otro" hidden>
     <b>Su negocio no está en la lista.</b> El valor de arriba es la referencia de una página completa. Escríbanos y lo ajustamos a lo que usted hace: puede quedar en menos.
   </div>
-  <div class="nota">
-    <b>Los videos no se guardan en la página.</b> Se traen de su canal de YouTube o TikTok. Así la página abre en segundos aunque el video sea largo, y las vistas se le quedan a su canal.
+
+  <h3 class="faqtit">Si su negocio necesita más</h3>
+  <div class="masc">
+    <a href="sitio-corporativo.html"><b>Sitio con varias secciones</b><small>Cuando cada servicio necesita su propia sección, con menú</small></a>
+    <a href="tienda-en-linea.html"><b>Tienda en línea</b><small>Cuando hay que cobrar en línea, con carrito y pasarela</small></a>
   </div>
-  <div class="nota">
-    <b>Si su negocio necesita más.</b> Cuando cada servicio necesita su propia sección, con menú: <a href="sitio-corporativo.html" style="color:var(--acento)">sitio con varias secciones</a>. Cuando hay que cobrar en línea, con carrito y pasarela: <a href="tienda-en-linea.html" style="color:var(--acento)">tienda</a>. Y si necesita algo hecho para su forma de trabajar, escríbanos y lo hablamos.
-  </div>
+
+  <h3 class="faqtit">Preguntas frecuentes</h3>
+  <details class="faq">
+    <summary>¿Qué es una sección de trabajo?</summary>
+    <div class="cuerpo">Un envío suyo con lo que haya cambiado: fotos, precios, disponibilidad, números y enlaces. No importa si manda una cosa o seis, importa que llegue junto. Lo que no entra son los títulos y las descripciones de sus servicios: no por costo, sino porque son los que Google ya leyó, y reescribirlos cada mes hace que el negocio empiece de cero cada mes. Eso se revisa una vez al año o cuando el negocio cambie de verdad. Y si necesita una sección que no existe, eso es desarrollo y se cotiza aparte.</div>
+  </details>
+  <details class="faq">
+    <summary>¿Los videos se guardan en la página?</summary>
+    <div class="cuerpo">No. Se traen de su canal de YouTube o TikTok. Así la página abre en segundos aunque el video sea largo, y las vistas se le quedan a su canal.</div>
+  </details>
+  <details class="faq">
+    <summary>¿Necesito algo hecho a la medida?</summary>
+    <div class="cuerpo">Si necesita algo hecho para su forma de trabajar, escríbanos y lo hablamos. Se cotiza aparte.</div>
+  </details>
 </div></section>
 
 <div class="total"><div class="wrap">
@@ -167,26 +205,41 @@ h1{font-size:clamp(31px,8vw,44px);margin-bottom:10px}
 
   // cada nivel incluye el anterior: no se venden piezas sueltas
   var ALCANCE = [
-    {id:"a1", n:"Que lo encuentren y le escriban", v:0,
-     d:"Sus redes al frente, su ficha de Google conectada y un WhatsApp por cada cosa que ofrece.",
-     items:["Sus cinco redes arriba, en la primera pantalla: TikTok, Instagram, Facebook, "
-            + "YouTube y Google. No escondidas al final",
-            "Un espacio por red para lo último que publicó, con el enlace a cada perfil",
-            "Su ficha de Google, creada o puesta al día, y conectada a la página",
+    {id:"a1", n:"Mostrar su negocio y que le escriban", v:0,
+     d:"Sus redes al frente, su negocio en Google y en Maps conectado, y un botón de WhatsApp por cada cosa que ofrece.",
+     items:["Los cinco espacios de redes arriba, en la primera pantalla, con las que "
+            + "usted ya tenga: TikTok, Instagram, Facebook, YouTube y Google. No escondidas al final",
+            "Un espacio por red social para lo último que publicó, con el enlace a cada perfil",
+            "Su negocio en Google y en Maps, creado o puesto al día, y conectado a la página",
+            "SEO: la página queda presente y reconocible para Google, con título propio, "
+            + "descripción y los datos del negocio. Estar en el buscador, que no es lo mismo "
+            + "que un puesto garantizado",
             "Lo que ofrece, con precio o condiciones, y quién atiende",
-            "Cómo llegar, horario y los medios de pago que recibe",
-            "Las reseñas de Google a la vista, y el botón que le pide la reseña al cliente",
             "Un botón de WhatsApp por cada servicio o producto, con el mensaje ya escrito",
-            "Código QR de su página, para el mostrador y la vitrina",
-            "La página queda con la información que Google necesita para entenderla: "
-            + "título propio, descripción y los datos de su negocio",
-            "Medición conectada: cuántos entraron y cuántos tocaron el WhatsApp"]},
-    {id:"a2", n:"Que además pidan, reserven o agenden", v:150000,
-     d:"Una solicitud que arma sola el mensaje con la fecha, la cantidad o la cita, y le llega lista al WhatsApp.",
-     items:["Solicitud de cita, fecha o pedido con los datos ya escritos",
-            "El pedido llega sumado y completo, no en pedazos",
-            "Sus videos traídos desde su canal de YouTube o TikTok, mostrados por ítem",
-            "Credenciales, registros y afiliaciones a la vista, cuando el negocio los tiene"]}
+            "Barra fija abajo: el WhatsApp a un toque desde cualquier punto de la página",
+            "Cómo llegar con Google Maps y con Waze, horario y los medios de pago que recibe",
+            "Las reseñas de Google a la vista, y el botón que le pide la reseña al cliente",
+            "El año desde el que atiende, arriba y visible",
+            "Código QR de su página, listo para el mostrador, la vitrina y lo impreso",
+            "Tipografía y color escogidos para su negocio: no queda con la cara de otro",
+            "Hecha para el celular primero: abre en segundos con datos móviles",
+            "Sus fotos recortadas y optimizadas, para que pesen poco y se vean bien",
+            "Publicada y andando, con candado de seguridad y su dirección propia",
+            "Un solo enlace permanente que usted controla, que ningún algoritmo le cierra"]},
+    {id:"a2", n:"Recibir pedidos, reservas y citas", v:150000,
+     d:"Todo lo anterior, más: un formulario que arma el mensaje con día, hora o cantidad · una calculadora que suma sola · su QR de pago · sus datos marcados para que Google los muestre.",
+     items:["Mensajes configurados para WhatsApp: el visitante escoge día, hora o "
+            + "cantidad y el mensaje sale escrito",
+            "Todo llega en un solo mensaje, no en varios sueltos",
+            "El horario manda: la solicitud no deja escoger un día ni una hora en que "
+            + "usted no atiende",
+            "Calculadora en la página: noches, cantidades o cuotas se suman solas y el "
+            + "total viaja dentro del mensaje",
+            "Datos estructurados: Google puede mostrar su horario, sus reseñas y sus "
+            + "precios dentro del resultado, no solo el enlace",
+            "Su QR de pago a la vista, el mismo que ya usa, para que le paguen sin salir "
+            + "de la página",
+            "Sus videos traídos desde su canal de YouTube o TikTok, mostrados por ítem"]}
   ];
 
   var PLANES = [
@@ -256,10 +309,11 @@ h1{font-size:clamp(31px,8vw,44px);margin-bottom:10px}
     var giro = document.querySelector('input[name="giro"]:checked');
 
     // el alcance es acumulativo: se suma este y todos los anteriores
-    var suma = 0, incluye = [];
+    var suma = 0, grupos = [];
     for (var i = 0; i < ALCANCE.length; i++) {
       suma += ALCANCE[i].v;
-      incluye = incluye.concat(ALCANCE[i].items);
+      grupos.push({t: i === 0 ? "En el montaje" : "Lo que agrega \u00ab" + ALCANCE[i].n + "\u00bb",
+                   items: ALCANCE[i].items});
       if (ALCANCE[i].id === a.id) break;
     }
     var unico = BASE + t.v + suma + dm.v;
@@ -270,6 +324,8 @@ h1{font-size:clamp(31px,8vw,44px);margin-bottom:10px}
 
     var av = document.getElementById("aviso-dominio");
     if (av) av.hidden = (dm.id !== "d1");
+    var sol = document.getElementById("aviso-solicitud");
+    if (sol) sol.hidden = (a.id !== "a2");
 
     document.getElementById("unico").textContent = pesos(unico);
     document.getElementById("mensual").textContent = mensual ? pesos(mensual) : "$0";
@@ -282,7 +338,11 @@ h1{font-size:clamp(31px,8vw,44px);margin-bottom:10px}
       '. Mitad al empezar y mitad al entregar. ' +
       (mensual ? 'La actualización se factura mes vencido y se puede parar cuando quiera.'
                : 'Sin cuota mensual.') + '</p>' +
-      '<ul>' + incluye.map(function(x){ return '<li>' + x + '</li>'; }).join("") + '</ul>';
+      grupos.map(function(g, i){
+        return (grupos.length > 1 ? '<div class="grupo"' +
+                 (i ? ' style="margin-top:14px"' : '') + '>' + g.t + '</div>' : '') +
+               '<ul>' + g.items.map(function(x){ return '<li>' + x + '</li>'; }).join("") + '</ul>';
+      }).join("");
 
     return {giro: giro ? giro.value : null, t: t, a: a, p: p, dm: dm,
             unico: unico, mensual: mensual, recargo: recargo};

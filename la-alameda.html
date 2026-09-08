@@ -114,6 +114,14 @@ h2{font-size:29px;margin-bottom:18px}
 .enviar{width:100%;background:var(--oliva);color:#FBF8F0;border:0;border-radius:12px;padding:15px;font-family:'Lato',sans-serif;font-size:15px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
 .enviar:hover{background:#4C5A3C}
 .aviso{font-size:13.5px;color:var(--suave);margin-top:12px}
+.cuenta{background:var(--salvia);border-radius:13px;padding:14px 16px;margin:2px 0 16px}
+.cuenta .renglon{display:flex;justify-content:space-between;font-size:14.5px;color:var(--suave);padding:2px 0}
+.cuenta .total{display:flex;justify-content:space-between;align-items:baseline;
+  border-top:1px solid var(--linea);margin-top:8px;padding-top:8px}
+.cuenta .total span{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--suave)}
+.cuenta .total b{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:25px;line-height:1.1}
+.alerta{background:#F3E3D6;color:#7A4A25;border-radius:11px;padding:10px 13px;
+  font-size:13.5px;margin:-6px 0 16px}
 
 .datos{background:var(--salvia);border-radius:16px;padding:6px 18px}
 .dato{display:flex;justify-content:space-between;gap:18px;padding:11px 0;border-bottom:1px solid rgba(92,107,74,.22);font-size:15.5px}
@@ -196,7 +204,7 @@ h2{font-size:29px;margin-bottom:18px}
     <p>Cama doble, baño privado y ventana al corredor interior. Pensada para quien viaja solo o por trabajo.</p>
     <div class="detalle">1 o 2 personas · Desayuno incluido · Wifi</div><br>
     <a class="pedir-hab" href="https://wa.me/57XXXXXXXXXX?text=Buenas%2C%20me%20interesa%20la%20habitaci%C3%B3n%20Sencilla%20%28%2495.000%20la%20noche%29.%20%C2%BFTienen%20disponible%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2A10 10 0 0 0 3.5 17.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>Preguntar por esta</a>
-    <span class="o-bien">O <a href="#reservar">mande las fechas por el formulario</a>.</span>
+    <span class="o-bien">O <a href="#reservar">díganos qué fechas le interesan</a>.</span>
   </div>
 
   <div class="hab">
@@ -206,7 +214,7 @@ h2{font-size:29px;margin-bottom:18px}
     <p>Dos camas y balcón hacia la calle principal. La más pedida los fines de semana, conviene reservar con tiempo.</p>
     <div class="detalle">Hasta 3 personas · Desayuno incluido · Wifi</div><br>
     <a class="pedir-hab" href="https://wa.me/57XXXXXXXXXX?text=Buenas%2C%20me%20interesa%20la%20Doble%20con%20balc%C3%B3n%20%28%24145.000%20la%20noche%29.%20%C2%BFTienen%20disponible%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2A10 10 0 0 0 3.5 17.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>Preguntar por esta</a>
-    <span class="o-bien">O <a href="#reservar">mande las fechas por el formulario</a>.</span>
+    <span class="o-bien">O <a href="#reservar">díganos qué fechas le interesan</a>.</span>
   </div>
 
   <div class="hab">
@@ -216,7 +224,7 @@ h2{font-size:29px;margin-bottom:18px}
     <p>Habitación amplia con cama doble y dos sencillas, sobre el patio. Cuna disponible sin costo.</p>
     <div class="detalle">Hasta 5 personas · Desayuno incluido · Wifi</div><br>
     <a class="pedir-hab" href="https://wa.me/57XXXXXXXXXX?text=Buenas%2C%20me%20interesa%20la%20habitaci%C3%B3n%20Familiar%20%28%24210.000%20la%20noche%29.%20%C2%BFTienen%20disponible%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2A10 10 0 0 0 3.5 17.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>Preguntar por esta</a>
-    <span class="o-bien">O <a href="#reservar">mande las fechas por el formulario</a>.</span>
+    <span class="o-bien">O <a href="#reservar">díganos qué fechas le interesan</a>.</span>
   </div>
 </div></section>
 
@@ -237,21 +245,33 @@ h2{font-size:29px;margin-bottom:18px}
 
 <section class="seccion" id="reservar"><div class="wrap">
   <div class="rotulo">Reservas</div>
-  <h2>Solicitar una fecha</h2>
-  <p>Escríbanos las fechas y le confirmamos disponibilidad el mismo día.</p>
+  <h2>Consulte disponibilidad</h2>
+  <p>Escoja las fechas y le confirmamos disponibilidad el mismo día.</p>
   <div class="reserva">
     <div class="pareja">
       <div><label for="e">Llegada</label><input class="campo" id="e" type="date"></div>
       <div><label for="s">Salida</label><input class="campo" id="s" type="date"></div>
     </div>
     <div class="pareja">
-      <div><label for="p">Personas</label><input class="campo" id="p" type="number" min="1" value="2"></div>
-      <div><label for="h">Habitación</label><input class="campo" id="h" type="text" value="Doble con balcón"></div>
+      <div><label for="h">Habitación</label>
+        <select class="campo" id="h">
+          <option value="Sencilla" data-tarifa="95000" data-cupo="2">Sencilla — $95.000 la noche</option>
+          <option value="Doble con balcón" data-tarifa="145000" data-cupo="3" selected>Doble con balcón — $145.000 la noche</option>
+          <option value="Familiar" data-tarifa="210000" data-cupo="5">Familiar — $210.000 la noche</option>
+        </select></div>
+      <div><label for="p">Personas</label><input class="campo" id="p" type="number" min="1" max="5" value="2"></div>
+    </div>
+    <label for="hora">Hora aproximada de llegada</label>
+    <select class="campo" id="hora"></select>
+    <div class="alerta" id="alerta" hidden></div>
+    <div class="cuenta">
+      <div class="renglon"><span id="detalle">Escoja las fechas</span></div>
+      <div class="total"><span>Estimado</span><b id="total">—</b></div>
     </div>
     <label for="n">Nombre y teléfono</label>
     <input class="campo" id="n" type="text" placeholder="Su nombre y número de contacto">
     <button class="enviar" id="btn">Enviar solicitud por WhatsApp</button>
-    <p class="aviso">La solicitud llega al WhatsApp del hotel con todos los datos ya escritos. La reserva queda en firme cuando el hotel la confirme.</p>
+    <p class="aviso">El valor es un estimado sobre la tarifa por noche; no incluye consumos adicionales. La solicitud llega al WhatsApp del hotel con todos los datos ya escritos. La reserva queda en firme cuando el hotel la confirme.</p>
   </div>
 </div></section>
 
@@ -307,17 +327,80 @@ h2{font-size:29px;margin-bottom:18px}
    <p style="font-size:13px;opacity:.72;margin-top:12px"><a href="https://vitrina.com.co/" style="color:inherit">Ver los demás ejemplos en vitrina.com.co</a></p></div>
 
 <script>
-document.getElementById('btn').addEventListener('click', function(){
-  var e = document.getElementById('e').value || 'por definir';
-  var s = document.getElementById('s').value || 'por definir';
-  var p = document.getElementById('p').value || '';
-  var h = document.getElementById('h').value || '';
-  var n = document.getElementById('n').value || '';
-  var t = 'Buenas, quiero solicitar una reserva.\n'
-        + 'Llegada: ' + e + '\nSalida: ' + s + '\nPersonas: ' + p
-        + '\nHabitación: ' + h + '\nA nombre de: ' + n;
-  window.open('https://wa.me/57XXXXXXXXXX?text=' + encodeURIComponent(t), '_blank');
-});
+(function(){
+  var E=document.getElementById('e'), S=document.getElementById('s'),
+      P=document.getElementById('p'), H=document.getElementById('h'),
+      N=document.getElementById('n'), HORA=document.getElementById('hora'),
+      ALERTA=document.getElementById('alerta'), DET=document.getElementById('detalle'),
+      TOT=document.getElementById('total'), BTN=document.getElementById('btn');
+
+  // La recepción atiende de 7:00 a.m. a 10:00 p.m.: no se ofrece una hora
+  // en que no hay quien reciba.
+  var ABRE=14, CIERRA=22;   // entrada 2:00 p.m., recepción hasta las 10:00 p.m.
+  for(var i=ABRE;i<=CIERRA;i++){
+    var o=document.createElement('option');
+    var h12 = i%12===0 ? 12 : i%12;
+    o.value = (i<10?'0':'')+i+':00';
+    o.textContent = h12+':00 '+(i<12?'a.m.':'p.m.');
+    if(i===16) o.selected=true;
+    HORA.appendChild(o);
+  }
+
+  function iso(d){ return d.toISOString().slice(0,10); }
+  function masDias(f,n){ var d=new Date(f+'T12:00:00'); d.setDate(d.getDate()+n); return iso(d); }
+
+  var hoy = iso(new Date());
+  E.min = hoy;                       // no se piden fechas que ya pasaron
+  if(!E.value) E.value = hoy;
+  S.min = masDias(E.value,1);
+
+  var pesos = function(n){ return '$' + n.toLocaleString('es-CO'); };
+
+  function noches(){
+    if(!E.value || !S.value) return 0;
+    var a=new Date(E.value+'T12:00:00'), b=new Date(S.value+'T12:00:00');
+    return Math.round((b-a)/86400000);
+  }
+
+  function calcular(){
+    S.min = masDias(E.value,1);
+    if(S.value && S.value <= E.value) S.value = S.min;   // la salida no puede ser antes de la llegada
+
+    var op = H.options[H.selectedIndex];
+    var tarifa = +op.dataset.tarifa, cupo = +op.dataset.cupo;
+    P.max = cupo;
+
+    var avisos = [];
+    if(+P.value > cupo) avisos.push('La ' + op.value + ' recibe hasta ' + cupo + ' personas. Escriba abajo si necesitan más y le proponemos una combinación.');
+    var n = noches();
+    ALERTA.hidden = avisos.length===0;
+    ALERTA.textContent = avisos.join(' ');
+
+    if(n<=0){ DET.textContent='Escoja las fechas'; TOT.textContent='—'; return {n:0,tarifa:tarifa,total:0}; }
+    var total = n*tarifa;
+    DET.textContent = n + (n===1?' noche':' noches') + ' × ' + pesos(tarifa);
+    TOT.textContent = pesos(total);
+    return {n:n, tarifa:tarifa, total:total};
+  }
+
+  ['change','input'].forEach(function(ev){
+    [E,S,P,H].forEach(function(el){ el.addEventListener(ev, calcular); });
+  });
+  calcular();
+
+  BTN.addEventListener('click', function(){
+    var r = calcular();
+    var t = 'Buenas, quiero solicitar una reserva.\n'
+          + 'Llegada: ' + (E.value||'por definir') + ' (llego sobre las ' + HORA.options[HORA.selectedIndex].textContent + ')'
+          + '\nSalida: ' + (S.value||'por definir')
+          + '\nNoches: ' + (r.n||'por definir')
+          + '\nHabitación: ' + H.value
+          + '\nPersonas: ' + P.value;
+    if(r.total) t += '\nEstimado: ' + pesos(r.total) + ' (' + r.n + ' × ' + pesos(r.tarifa) + ')';
+    t += '\nA nombre de: ' + (N.value||'');
+    window.open('https://wa.me/57XXXXXXXXXX?text=' + encodeURIComponent(t), '_blank');
+  });
+})();
 </script>
 
 </body>
